@@ -21,7 +21,7 @@
   var CONFIG = {
     hostname: new URL('https://tgzzl.github.io').hostname,
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '7.6.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
@@ -241,9 +241,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-12-23 10:48:19 / Modified: 11:07:01" itemprop="dateCreated datePublished" datetime="2019-12-23T10:48:19+08:00">2019-12-23</time>
+              <time title="Created: 2019-12-23 11:37:22" itemprop="dateCreated datePublished" datetime="2019-12-23T11:37:22+08:00">2019-12-23</time>
             </span>
 
           
@@ -437,189 +436,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://tgzzl.github.io/2019/12/23/jquery/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-      <meta itemprop="name" content="tgzzl">
-      <meta itemprop="description" content="途径梦想 且作停留">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谭广的技术专栏">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/23/jquery/" class="post-title-link" itemprop="url">jquery</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2019-12-23 10:48:09 / Modified: 11:09:05" itemprop="dateCreated datePublished" datetime="2019-12-23T10:48:09+08:00">2019-12-23</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">:first</span><br><span class="line">:first-child</span><br><span class="line">:first-<span class="keyword">of</span>-type</span><br><span class="line">:nth-child(n)</span><br><span class="line">:nth-<span class="keyword">of</span>-type(n)</span><br><span class="line">:only-child</span><br><span class="line">:only-<span class="keyword">of</span>-type</span><br><span class="line">:even</span><br><span class="line">:odd</span><br><span class="line">parent &gt; child <span class="comment">//$("div &gt; p")</span></span><br><span class="line">parent descendant <span class="comment">//$("div p")</span></span><br><span class="line">element + next <span class="comment">//$("div + p")</span></span><br><span class="line">element ~ siblings <span class="comment">//$("div ~ p")</span></span><br><span class="line">:eq(index)</span><br><span class="line">:button <span class="comment">//所有带有 type="button" 的 input 元素</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="效果方法-（可以用来实现-显示-隐藏-元素）"><a href="#效果方法-（可以用来实现-显示-隐藏-元素）" class="headerlink" title="效果方法 ==（可以用来实现 显示/隐藏 元素）=="></a>效果方法 ==（可以用来实现 显示/隐藏 元素）==</h3><ul>
-<li><p>hide([speed,callback]) 和 show([speed,callback])</p>
-<p>可选的 speed 参数规定隐藏/显示的速度，可以取以下值：”slow”、”fast” 或毫秒。</p>
-<p>可选的 callback 参数是隐藏或显示完成后所执行的函数名称。</p>
-</li>
-<li><p>slideDown([speed,easing,callback])、slideUp([speed,easing,callback])</p>
-</li>
-<li><p>fadeIn([speed,easing,callback])、fadeOut([speed,easing,callback])</p>
-</li>
-</ul>
-<h3 id="设置内容和属性"><a href="#设置内容和属性" class="headerlink" title="设置内容和属性"></a>设置内容和属性</h3><ul>
-<li><p>设置内容 - text()、html() 以及 val()</p>
-<p>text()、html() 以及 val()，同样拥有回调函数。回调函数有两个参数：被选元素列表中当前元素的下标，以及原始（旧的）值。然后以函数新值返回您希望使用的字符串。</p>
-</li>
-<li><p>设置属性 - attr()</p>
-<p>attr()，也提供回调函数。回调函数有两个参数：被选元素列表中当前元素的下标，以及原始（旧的）值。然后以函数新值返回您希望使用的字符串。</p>
-<p>attr() 方法也允许您同时设置多个属性。</p>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#btn1"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"#test1"</span>).text(<span class="function"><span class="keyword">function</span>(<span class="params">i,origText</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"旧文本: "</span> + origText + <span class="string">" 新文本: Hello world! (index: "</span> + i + <span class="string">")"</span>; </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">"#runoob"</span>).attr(<span class="string">"href"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">i,origValue</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> origValue + <span class="string">"/jquery"</span>; </span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"#runoob"</span>).attr(&#123;</span><br><span class="line">        <span class="string">"href"</span> : <span class="string">"http://www.runoob.com/jquery"</span>,</span><br><span class="line">        <span class="string">"title"</span> : <span class="string">"jQuery 教程"</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><ul>
-<li>append() prepend() 是在选择元素内部嵌入。</li>
-<li>after() before() 是在元素外面追加。</li>
-<li>appendTo() prependTo()</li>
-<li>insertAfter() insertBefore()<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;&lt;span&gt;Hello World!&lt;&#x2F;span&gt;&quot;).appendTo(&quot;p&quot;);&#x2F;&#x2F;p元素内容后插入span &#x3D;&gt; &lt;p&gt;原来的内容&lt;span&gt;Hello World!&lt;&#x2F;span&gt;&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">$(content).appendTo(selector)</span><br><span class="line">1. content	必需。规定要插入的内容（必须包含 HTML 标签）。</span><br><span class="line">注意：如果 content 是已存在的元素，它将从当前位置被移除，并在被选元素的结尾被插入。</span><br><span class="line">2. selector	必需。规定把内容追加到哪个元素上。</span><br><span class="line"></span><br><span class="line">$(content).insertBefore(selector)</span><br><span class="line">1. content	必需。规定要插入的内容（必须包含 HTML 标签）。</span><br><span class="line">注意：如果 content 是已存在的元素，它将从它的当前位置被移除，并被插入在被选元素之前。</span><br><span class="line">2. selector	必需。规定在何处插入内容。</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h3><ul>
-<li><p>remove() 方法删除被选元素及其子元素。</p>
-<p>remove() 方法也可接受一个参数，允许对被删元素进行过滤，该参数可以是任何 jQuery 选择器的语法。</p>
-<p>$(“p”).remove(“.italic”);//删除 class=”italic” 的所有 p 元素</p>
-</li>
-<li><p>empty() 方法删除被选元素的子元素。</p>
-</li>
-</ul>
-<h3 id="尺寸方法"><a href="#尺寸方法" class="headerlink" title="尺寸方法"></a>尺寸方法</h3><ul>
-<li>width() height() </li>
-</ul>
-<p>返回元素的宽度、高度（不包括内边距、边框或外边距）</p>
-<ul>
-<li>innerWidth() innerHeight()</li>
-</ul>
-<p>返回元素的宽度、高度（包括内边距、不包括边框或外边距）</p>
-<ul>
-<li>outerWidth() outerHeight()</li>
-</ul>
-<p>返回元素的宽度、高度（包括内边距和边框）</p>
-<p>outerWidth(ture) 返回元素的宽度、高度（包括内边距和边框和外边距）</p>
-<p><img src="http://www.runoob.com/images/img_jquerydim.gif" alt="image"></p>
-<h3 id="遍历-祖先"><a href="#遍历-祖先" class="headerlink" title="遍历 - 祖先"></a>遍历 - 祖先</h3><ul>
-<li><p>parent() 返回被选元素的直接父元素。</p>
-</li>
-<li><p>parents() 返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (<html>)。</p>
-</li>
-<li><p>parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素。</p>
-<p>$(“span”).parentsUntil(“div”);//返回介于 span 与 div 元素之间的所有祖先元素</p>
-</li>
-</ul>
-<h3 id="遍历-同胞-siblings"><a href="#遍历-同胞-siblings" class="headerlink" title="遍历 - 同胞(siblings)"></a>遍历 - 同胞(siblings)</h3><ul>
-<li>siblings() 返回被选元素的所有同胞元素。</li>
-<li>next() 返回被选元素的下一个同胞元素。</li>
-<li>nextAll()</li>
-<li>nextUntil()</li>
-<li>prev()</li>
-<li>prevAll()</li>
-<li>prevUntil()</li>
-</ul>
-<h3 id="遍历-过滤"><a href="#遍历-过滤" class="headerlink" title="遍历- 过滤"></a>遍历- 过滤</h3><ul>
-<li>first()</li>
-<li>last()</li>
-<li>eq() ,索引号从 0 开始</li>
-<li>filter()</li>
-<li>not() ,与 filter() 相反</li>
-</ul>
-<h3 id="Jsonp-JSON-with-Padding"><a href="#Jsonp-JSON-with-Padding" class="headerlink" title="Jsonp(JSON with Padding)"></a>Jsonp(JSON with Padding)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">callbackFunction</span>(<span class="params">result, methodName</span>)</span>&#123;&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">" src="</span>http:<span class="comment">//www.runoob.com/try/ajax/jsonp.php?jsoncallback=callbackFunction"&gt;&lt;/script&gt;</span></span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/jQuery 使用 JSONP</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    $.getJSON("http:/</span><span class="regexp">/www.runoob.com/</span><span class="keyword">try</span>/ajax/jsonp.php?jsoncallback=?<span class="string">", function(data) &#123;&#125;);</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>onreadystatechange</td>
-<td>存储函数（或函数名），每当 readyState 属性改变时，就会调用该函数。</td>
-</tr>
-<tr>
-<td>readyState</td>
-<td>存有 XMLHttpRequest 的状态。</td>
-</tr>
-<tr>
-<td>status</td>
-<td>200: “OK” 404: 未找到页面</td>
-</tr>
-<tr>
-<td>readyState 从 0 到 4 发生变化。</td>
-<td></td>
-</tr>
-<tr>
-<td>- 0: 请求未初始化</td>
-<td></td>
-</tr>
-<tr>
-<td>- 1: 服务器连接已建立</td>
-<td></td>
-</tr>
-<tr>
-<td>- 2: 请求已接收</td>
-<td></td>
-</tr>
-<tr>
-<td>- 3: 请求处理中</td>
-<td></td>
-</tr>
-<tr>
-<td>- 4: 请求已完成，且响应已就绪)</td>
-<td></td>
-</tr>
-</tbody></table>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ajax</span></span><br><span class="line"><span class="keyword">var</span> xmlhttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xmlhttp.open(<span class="string">"POST"</span>,<span class="string">"/try/ajax/demo_post2.php"</span>,<span class="literal">true</span>);</span><br><span class="line">xmlhttp.setRequestHeader(<span class="string">"Content-type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">xmlhttp.send(<span class="string">"fname=Henry&amp;lname=Ford"</span>);</span><br><span class="line">xmlhttp.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (xmlhttp.readyState==<span class="number">4</span> &amp;&amp; xmlhttp.status==<span class="number">200</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(xmlhttp.responseText, xmlhttp.responseXML)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">//jQuery处理多个异步事件</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">	<span class="keyword">var</span> d1 = $.Deferred();</span><br><span class="line">	<span class="keyword">var</span> d2 = $.Deferred();</span><br><span class="line">	<span class="keyword">var</span> d3 = $.Deferred();</span><br><span class="line">	$.when( d1, d2, d3 ).done(<span class="function"><span class="keyword">function</span> (<span class="params"> v1, v2, v3 </span>) </span>&#123;</span><br><span class="line">		alert( v1 ); <span class="comment">// v1 is undefined</span></span><br><span class="line">		alert( v2 ); <span class="comment">// v2 is "abc"</span></span><br><span class="line">		alert( v3 ); <span class="comment">// v3 is an array [ 1, 2, 3, 4, 5 ]</span></span><br><span class="line">	&#125;);</span><br><span class="line">	d1.resolve();</span><br><span class="line">	d2.resolve( <span class="string">"abc"</span> );</span><br><span class="line">	d3.resolve( <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> );</span><br><span class="line">&#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://tgzzl.github.io/2019/12/23/es5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -643,9 +459,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-12-23 10:48:01 / Modified: 11:08:52" itemprop="dateCreated datePublished" datetime="2019-12-23T10:48:01+08:00">2019-12-23</time>
+              <time title="Created: 2019-12-23 11:37:18" itemprop="dateCreated datePublished" datetime="2019-12-23T11:37:18+08:00">2019-12-23</time>
             </span>
 
           
@@ -745,8 +560,7 @@
 <li>闭包的最大用处有两个，一个是可以读取函数内部的变量，另一个就是让这些变量始终保持在内存中，即闭包可以使得它诞生环境一直存在。</li>
 <li>闭包的另一个用处，是封装对象的私有属性和私有方法。</li>
 </ul>
-<h3 id="原型-amp-原型链"><a href="#原型-amp-原型链" class="headerlink" title="原型 &amp; 原型链"></a>原型 &amp; 原型链</h3><p><img src="https://dn-mhke0kuv.qbox.me/fed5ccbaec8b54c133a3.png?imageView2/1/w/1304/h/734/q/85/interlace/1" alt="image"></p>
-<ul>
+<h3 id="原型-amp-原型链"><a href="#原型-amp-原型链" class="headerlink" title="原型 &amp; 原型链"></a>原型 &amp; 原型链</h3><ul>
 <li>prototype 是函数(function) 的一个属性, 它指向函数的原型.</li>
 <li><strong>proto</strong> 是对象的内部属性, 它指向构造器的原型, 对象依赖它进行原型链查询，instanceof 也是依赖它来判断是否继承关系.</li>
 </ul>
@@ -889,7 +703,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://tgzzl.github.io/2019/12/23/linux-note/">
+    <link itemprop="mainEntityOfPage" href="https://tgzzl.github.io/2019/12/23/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E7%82%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.jpg">
@@ -903,7 +717,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/23/linux-note/" class="post-title-link" itemprop="url">linux note</a>
+            <a href="/2019/12/23/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E7%82%B9/" class="post-title-link" itemprop="url">前端知识点</a>
         </h1>
 
         <div class="post-meta">
@@ -914,7 +728,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-12-23 10:46:23 / Modified: 11:09:18" itemprop="dateCreated datePublished" datetime="2019-12-23T10:46:23+08:00">2019-12-23</time>
+              <time title="Created: 2019-12-23 10:49:06 / Modified: 10:49:07" itemprop="dateCreated datePublished" datetime="2019-12-23T10:49:06+08:00">2019-12-23</time>
             </span>
 
           
@@ -928,188 +742,102 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <hr>
+          <h4 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h4><p>合理的title、description、keywords：搜索对着三项的权重逐个减小，title值强调重点即可，重要关键词出现不要超过2次，而且要靠前，不同页面title要有所不同；description把页面内容高度概括，长度合适，不可过分堆砌关键词，不同页面description有所不同；keywords列举出重要关键词即可</p>
+<p>重要内容HTML代码放在最前，重要内容不要用js输出</p>
+<h4 id="doctype"><a href="#doctype" class="headerlink" title="doctype"></a>doctype</h4><!doctype><p>声明必须处于HTML文档的头部，在<html>标签之前，HTML5中不区分大小写</p>
+<!doctype><p>声明不是一个HTML标签，是一个用于告诉浏览器当前HTMl版本的指令</p>
+<p>现代浏览器的html布局引擎通过检查doctype决定使用兼容模式还是标准模式对文档进行渲染，一些浏览器有一个接近标准模型。DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。在兼容模式中，页面以宽松的向后兼容的方式显示,模拟老式浏览器的行为以防止站点无法工作。</p>
+<p>HTML5不基于SGML，所以不用指定DTD，但是需要doctype来规范浏览器的行为</p>
+<h5 id="常见dotype："><a href="#常见dotype：" class="headerlink" title="常见dotype："></a>常见dotype：</h5><ul>
+<li>HTML4.01</li>
+<li>XHTML1.0 </li>
+<li>HTML 5: <!doctype html></li>
+</ul>
+<h4 id="web语义化"><a href="#web语义化" class="headerlink" title="web语义化"></a>web语义化</h4><p>web语义化是指通过HTML标记表示页面包含的信息，包含了HTML标签的语义化和css命名的语义化。</p>
+<p>HTML标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构</p>
+<p>css命名的语义化是指：为html标签添加有意义的class，id补充未表达的语义，如Microformat通过添加符合规则的class描述信息 </p>
+<p>语义化的意义：</p>
 <ul>
-<li>安装扩展包 Oracle_VM_VirtualBox_Extension_Pack-5.1.8-111374.vbox-extpack <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">virtualbox官网</a></li>
-<li>加载VBoxGuestAdditions.ios <a href="http://download.virtualbox.org/virtualbox/" target="_blank" rel="noopener">下载地址</a></li>
-<li>设置共享文件夹，并勾选自动挂载和固定分配</li>
-<li>启动Ubuntu，运行扩展包软件，等待系统执行完毕</li>
-<li>这时可以看到共享的文件了。Mac系统在系统偏好里添加需要共享的文件夹的访问权限</li>
-<li>普通用户不能访问，执行 sudo usermod -aG vboxsf $(whoami) 将当前用户加入到vboxsf组就行了</li>
+<li>去掉样式后页面呈现清晰的结构</li>
+<li>盲人使用读屏器更好地阅读</li>
+<li>搜索引擎更好地理解页面，有利于收录</li>
+<li>便团队项目的可持续运作及维护</li>
 </ul>
-<h3 id="使用-zsh-oh-my-zsh-替代-bash"><a href="#使用-zsh-oh-my-zsh-替代-bash" class="headerlink" title="使用 zsh oh-my-zsh 替代 bash"></a>使用 zsh oh-my-zsh 替代 bash</h3><hr>
+<h4 id="link-vs-import"><a href="#link-vs-import" class="headerlink" title="link vs @import"></a>link vs @import</h4><ul>
+<li>link属于XHTML标签，除了加载CSS外，还能用于定义RSS, 定义rel连接属性等作用；而@import是CSS提供的，只能用于加载CSS;</li>
+<li>页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;</li>
+<li>import是CSS2.1 提出的，只在IE5以上才能被识别，而link是XHTML标签，无兼容问题;</li>
+</ul>
+<h4 id="css-hack原理及常用hack"><a href="#css-hack原理及常用hack" class="headerlink" title="css hack原理及常用hack"></a>css hack原理及常用hack</h4><p>原理：利用不同浏览器对CSS的支持和解析结果不一样编写针对特定浏览器样式。</p>
+<p>常见的hack有1）属性hack。2）选择器hack。3）IE条件注释</p>
+<h4 id="display-float-position的关系"><a href="#display-float-position的关系" class="headerlink" title="display,float,position的关系"></a>display,float,position的关系</h4><ul>
+<li>如果display为none，那么position和float都不起作用，这种情况下元素不产生框</li>
+<li>否则，如果position值为absolute或者fixed，框就是绝对定位的，float的计算值为none，display表现为block或者table。</li>
+<li>否则，如果float不是none，框是浮动的，display进行调整</li>
+<li>否则，如果元素是根元素，display进行调整</li>
+<li>其他情况下display的值为指定值 </li>
+</ul>
+<p>总结起来：绝对定位、浮动、根元素都需要调整display</p>
+<h4 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h4><p>清除浮动是为了清除使用浮动元素产生的影响。浮动的元素，高度会塌陷，而高度的塌陷使我们页面后面的布局不能正常显示。</p>
+<h4 id="常见的浏览器内核"><a href="#常见的浏览器内核" class="headerlink" title="常见的浏览器内核"></a>常见的浏览器内核</h4><ul>
+<li>Trident内核：IE,MaxThon,TT,The World,360,搜狗浏览器等。[又称MSHTML]</li>
+<li>Gecko内核：Netscape6及以上版本，FF,MozillaSuite/SeaMonkey等</li>
+<li>Presto内核：Opera7及以上。      [Opera内核原为：Presto，现为：Blink;]</li>
+<li>Webkit内核：Safari,Chrome等。   [ Chrome的：Blink（WebKit的分支）]</li>
+</ul>
+<h4 id="HTTP-request-报文结构-amp-HTTP-response-报文结构"><a href="#HTTP-request-报文结构-amp-HTTP-response-报文结构" class="headerlink" title="HTTP request 报文结构 &amp; HTTP response 报文结构"></a>HTTP request 报文结构 &amp; HTTP response 报文结构</h4><p>request：</p>
 <ul>
-<li>sudo apt-get install zsh</li>
-<li>参考设置 <a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="noopener">https://github.com/robbyrussell/oh-my-zsh</a></li>
+<li>首行是Request-Line包括：请求方法，请求URI，协议版本，CRLF</li>
+<li>首行之后是若干行请求头，包括general-header，request-header或者entity-header，每个一行以CRLF结束</li>
+<li>请求头和消息实体之间有一个CRLF分隔</li>
+<li>根据实际请求需要可能包含一个消息实体</li>
 </ul>
-<h3 id="Linux-常用命令"><a href="#Linux-常用命令" class="headerlink" title="Linux 常用命令"></a>Linux 常用命令</h3><hr>
-<h4 id="ls-列出目录内容"><a href="#ls-列出目录内容" class="headerlink" title="==ls 列出目录内容=="></a>==ls 列出目录内容==</h4><ul>
-<li><h5 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h5><p>  方便区分目录和文件。目录为蓝色；可执行文件为草绿色；链接文件为淡蓝色；普通文件为黑色</p>
-</li>
-<li><h5 id="ls-F"><a href="#ls-F" class="headerlink" title="ls -F"></a>ls -F</h5><p>  在目录后加/；在可执行文件后加*；在链接文件后加@</p>
-</li>
-<li><h5 id="ls-a"><a href="#ls-a" class="headerlink" title="ls -a"></a>ls -a</h5><p>  列出当前目录所有文件，包含隐藏的文件。</p>
-</li>
-<li><h5 id="ls-l"><a href="#ls-l" class="headerlink" title="ls -l"></a>ls -l</h5><p>  查看文件属性。从左到右依次为：权限、链接文件个数、用户、用户组、文件大小、最后修改日期、最后修改时间、文件名</p>
-</li>
-<li><h5 id="ls-ld-demo"><a href="#ls-ld-demo" class="headerlink" title="ls -ld demo/"></a>ls -ld demo/</h5><p>  查看文件夹属性</p>
-</li>
-<li><h5 id="ls-usr-bin"><a href="#ls-usr-bin" class="headerlink" title="ls /usr/bin"></a>ls /usr/bin</h5><p>  查看指定目录下的文件</p>
-</li>
-</ul>
-<h4 id="dir-amp-vdir-列出目录内容"><a href="#dir-amp-vdir-列出目录内容" class="headerlink" title="==dir &amp; vdir 列出目录内容=="></a>==dir &amp; vdir 列出目录内容==</h4><ul>
-<li><h5 id="dir"><a href="#dir" class="headerlink" title="dir"></a>dir</h5><p>  linux中，dir除了比ls功能少，其它都一样</p>
-</li>
-<li><h5 id="vdir"><a href="#vdir" class="headerlink" title="vdir"></a>vdir</h5><p>  vdir相当于<code>ls -l</code>，列出文件的完整信息</p>
-</li>
-</ul>
-<h4 id="cat-amp-more-查看文本文件"><a href="#cat-amp-more-查看文本文件" class="headerlink" title="==cat &amp; more 查看文本文件=="></a>==cat &amp; more 查看文本文件==</h4><ul>
-<li><h5 id="cat-n-demo-txt"><a href="#cat-n-demo-txt" class="headerlink" title="cat -n demo.txt"></a>cat -n demo.txt</h5><p>  查看文本时显示行号</p>
-</li>
-<li><h5 id="more"><a href="#more" class="headerlink" title="more"></a>more</h5><p>  more可以分页显示文件内容。按下 空格键 向下翻页，按下 回车键 向下滚动一行，按下 Q键 退出</p>
-</li>
-</ul>
-<h4 id="head-amp-tail-查看文件开头、结尾"><a href="#head-amp-tail-查看文件开头、结尾" class="headerlink" title="==head &amp; tail 查看文件开头、结尾=="></a>==head &amp; tail 查看文件开头、结尾==</h4><ul>
-<li><h5 id="head-n-5-demo-txt"><a href="#head-n-5-demo-txt" class="headerlink" title="head -n 5 demo.txt"></a>head -n 5 demo.txt</h5><p>  查看文本开头5行</p>
-</li>
-<li><h5 id="tail-demo-txt"><a href="#tail-demo-txt" class="headerlink" title="tail demo.txt"></a>tail demo.txt</h5><p>  查看文件末尾内容     </p>
-</li>
-</ul>
-<h4 id="less-更好的文本阅读"><a href="#less-更好的文本阅读" class="headerlink" title="==less 更好的文本阅读=="></a>==less 更好的文本阅读==</h4><ul>
-<li><h5 id="less-demo-txt"><a href="#less-demo-txt" class="headerlink" title="less demo.txt"></a>less demo.txt</h5><p>  less更像vim，只是去掉的编辑功能。按下 空格键 向下翻页，按下 B键 向前翻页。输入“/”跟上要查找的内容，less会把找到的目标高亮显示。</p>
-</li>
-<li><h5 id="less-M-demo-txt"><a href="#less-M-demo-txt" class="headerlink" title="less -M demo.txt"></a>less -M demo.txt</h5><p>   命令可以显示更多文件信息，比如文件名、当前页码等</p>
-</li>
-</ul>
-<h4 id="grep-查找文件内容"><a href="#grep-查找文件内容" class="headerlink" title="==grep 查找文件内容=="></a>==grep 查找文件内容==</h4><ul>
-<li><h5 id="grep-options-pattern-file…"><a href="#grep-options-pattern-file…" class="headerlink" title="grep [options] pattern [file…]"></a>grep [options] pattern [file…]</h5><p>  grep ‘this is search content’ demo.txt 命令会将文件中出现匹配内容的行输出</p>
-</li>
-</ul>
-<h4 id="find-指定目录下查找文件"><a href="#find-指定目录下查找文件" class="headerlink" title="==find 指定目录下查找文件=="></a>==find 指定目录下查找文件==</h4><ul>
-<li><h5 id="find-options-path…-expression"><a href="#find-options-path…-expression" class="headerlink" title="find [options] [path…] [expression]"></a>find [options] [path…] [expression]</h5></li>
-<li><input checked="" disabled="" type="checkbox"> <p>使用 -type 选项来定位特殊文件类型</p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>含义</th>
-<th>参数</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>b</td>
-<td>块设备文件</td>
-<td>c</td>
-<td>字符设备文件</td>
-</tr>
-<tr>
-<td>d</td>
-<td>目录文件</td>
-<td>f</td>
-<td>普通文件</td>
-</tr>
-<tr>
-<td>p</td>
-<td>命名管道</td>
-<td>l</td>
-<td>符号链接</td>
-</tr>
-</tbody></table>
-</li>
-<li><input checked="" disabled="" type="checkbox"> <p>通过指定时间来指导 find 命令查找文件</p>
-<p>  -atime n 查找最后一次使用在n天前的文件</p>
-<p>  -mtime n 查找最后一次修改在n天前的文件  </p>
-<p>  使用 +n -n 来限定时间范围。+n表示大于n，-n表示小于n</p>
-</li>
-</ul>
-<blockquote>
-<p>find ~/ -name *.c -print 命令会列出用户主目录下所有的c程序文件</p>
-</blockquote>
-<blockquote>
-<p>find . -type f -atime -5 -print 查找当前目录下最近5天内使用过的文件</p>
-</blockquote>
-<h4 id="whereis-查找特定程序"><a href="#whereis-查找特定程序" class="headerlink" title="==whereis 查找特定程序=="></a>==whereis 查找特定程序==</h4><ul>
-<li><h5 id="whereis-b-find-查找find命令的二进制可执行文件"><a href="#whereis-b-find-查找find命令的二进制可执行文件" class="headerlink" title="whereis -b find 查找find命令的二进制可执行文件"></a>whereis -b find 查找find命令的二进制可执行文件</h5></li>
-</ul>
-<h3 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h3><hr>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">GET /Protocols/rfc2616/rfc2616-sec5.html HTTP/1.1</span><br><span class="line">Host: www.w3.org</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Cache-Control: max-age=0</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</span><br><span class="line"></span><br><span class="line">name=qiu&amp;age=25</span><br></pre></td></tr></table></figure>
+
+<p>response：</p>
 <ul>
-<li><h5 id="mkdir-p-tmp-test-创建一个完整的目录结构"><a href="#mkdir-p-tmp-test-创建一个完整的目录结构" class="headerlink" title="mkdir -p ~/tmp/test 创建一个完整的目录结构"></a>mkdir -p ~/tmp/test 创建一个完整的目录结构</h5></li>
-<li><h5 id="mv-i-demo-txt-tmp-移动文件，如果有重名文件会给出提示"><a href="#mv-i-demo-txt-tmp-移动文件，如果有重名文件会给出提示" class="headerlink" title="mv -i demo.txt tmp/ 移动文件，如果有重名文件会给出提示"></a>mv -i demo.txt tmp/ 移动文件，如果有重名文件会给出提示</h5></li>
-<li><h5 id="mv-b-demo-txt-tmp-移动文件，系统会将目标目录的同名文件在其文件名后面加“-”，有效避免覆盖"><a href="#mv-b-demo-txt-tmp-移动文件，系统会将目标目录的同名文件在其文件名后面加“-”，有效避免覆盖" class="headerlink" title="mv -b demo.txt tmp/ 移动文件，系统会将目标目录的同名文件在其文件名后面加“~”，有效避免覆盖"></a>mv -b demo.txt tmp/ 移动文件，系统会将目标目录的同名文件在其文件名后面加“~”，有效避免覆盖</h5></li>
-<li><h5 id="cp-i-demo-txt-tmp-复制文件，如果有重名文件会给出提示"><a href="#cp-i-demo-txt-tmp-复制文件，如果有重名文件会给出提示" class="headerlink" title="cp -i demo.txt tmp/ 复制文件，如果有重名文件会给出提示"></a>cp -i demo.txt tmp/ 复制文件，如果有重名文件会给出提示</h5></li>
-<li><h5 id="cp-b-demo-txt-tmp-复制文件，系统会将目标目录的同名文件在其文件名后面加“-”，有效避免覆盖"><a href="#cp-b-demo-txt-tmp-复制文件，系统会将目标目录的同名文件在其文件名后面加“-”，有效避免覆盖" class="headerlink" title="cp -b demo.txt tmp/ 复制文件，系统会将目标目录的同名文件在其文件名后面加“~”，有效避免覆盖"></a>cp -b demo.txt tmp/ 复制文件，系统会将目标目录的同名文件在其文件名后面加“~”，有效避免覆盖</h5></li>
-<li><h5 id="cp-r-demo-tmp-复制文件，将子目录及其其中的文件全部复制"><a href="#cp-r-demo-tmp-复制文件，将子目录及其其中的文件全部复制" class="headerlink" title="cp -r demo/ tmp/ 复制文件，将子目录及其其中的文件全部复制"></a>cp -r demo/ tmp/ 复制文件，将子目录及其其中的文件全部复制</h5></li>
-<li><h5 id="rm-f-demo-txt-删除有写保护的文件时避免系统的确认提示"><a href="#rm-f-demo-txt-删除有写保护的文件时避免系统的确认提示" class="headerlink" title="rm -f demo.txt 删除有写保护的文件时避免系统的确认提示"></a>rm -f demo.txt 删除有写保护的文件时避免系统的确认提示</h5></li>
-<li><h5 id="rm-r-demo-完整删除目录"><a href="#rm-r-demo-完整删除目录" class="headerlink" title="rm -r demo/ 完整删除目录"></a>rm -r demo/ 完整删除目录</h5></li>
-<li><h5 id="chown-amp-chgrp-改变文件所有权"><a href="#chown-amp-chgrp-改变文件所有权" class="headerlink" title="chown &amp; chgrp 改变文件所有权"></a>chown &amp; chgrp 改变文件所有权</h5><p>  chown [option]… [owner][:[group]] file…</p>
-<p>  chown -R tg:root tmp/ 更改目录及其下所有文件的所有权</p>
-<p>  chgrp -R root tmp/ 更改目录及其下所有文件的所有权</p>
-</li>
-<li><h5 id="chmod-改变文件权限"><a href="#chmod-改变文件权限" class="headerlink" title="chmod 改变文件权限"></a>chmod 改变文件权限</h5></li>
+<li>首行是状态行包括：HTTP版本，状态码，状态描述，后面跟一个CRLF</li>
+<li>首行之后是若干行响应头，包括：通用头部，响应头部，实体头部</li>
+<li>响应头部和响应实体之间用一个CRLF空行分隔</li>
+<li>最后是一个可能的消息实体 </li>
 </ul>
-<blockquote>
-<pre><code>这个命令还用“用户组+/-权限”的表达式来添加/删除相应的权限
-用户组包含文件属性主（u）、文件属组（g）、其他人（o）和所有人（a）;权限包含读（r）、写（w）、执行（x）
-chmod a-x demo ; chmod u+x demo ; chmod ug=rw,o=r demo ;chmod o=u demo</code></pre></blockquote>
-<blockquote>
-<pre><code>文件权限的八进制表示
-1：x，2：w，4：r ；rwx=4+2+1=7 ; chmod 775 demo     </code></pre></blockquote>
-<h3 id="apt-get-amp-apt-cache"><a href="#apt-get-amp-apt-cache" class="headerlink" title="apt-get &amp; apt-cache"></a>apt-get &amp; apt-cache</h3><hr>
-<pre><code>命令 | 描述
----|---
-apt-get install | 下载安装
-apt-get upgrade | 更新系统上已下载的软件包
-apt-get remove  | 卸载
-apt-get source  | 下载特定的软件源代码
-apt-get clean   | 删除所有已下载的包文件
-apt-cache search   | 模糊搜索
-apt-cache depends  | 列出指定包的依赖关系</code></pre><p>==从源代码编译软件==</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">TTP/1.1 200 OK</span><br><span class="line">Date: Tue, 08 Jul 2014 05:28:43 GMT</span><br><span class="line">Server: Apache/2</span><br><span class="line">Last-Modified: Wed, 01 Sep 2004 13:24:52 GMT</span><br><span class="line">ETag: "40d7-3e3073913b100"</span><br><span class="line">Accept-Ranges: bytes</span><br><span class="line">Content-Length: 16599</span><br><span class="line">Cache-Control: max-age=21600</span><br><span class="line"></span><br><span class="line">&#123;"name": "qiu", "age": 25&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="网站性能优化"><a href="#网站性能优化" class="headerlink" title="网站性能优化"></a>网站性能优化</h4><ul>
+<li>content方面</li>
+</ul>
+<ol>
+<li>减少HTTP请求：合并文件、CSS精灵、inline Image</li>
+<li>减少DNS查询：DNS缓存、负载均衡</li>
+<li>Ajax可缓存</li>
+<li>非必须组件延迟加载、未来所需组件预加载</li>
+<li>将资源放到不同的域下：增加域可以提高并行下载量</li>
+</ol>
 <ul>
-<li><strong>tar zxvf</strong>  xxx.tar.gz #解压源代码压缩包</li>
-<li><strong>./configure –prefix</strong>=/usr/local/yourdir #设置安装目录</li>
-<li>make #编译源代码</li>
-<li>sudo make install #安装</li>
+<li>css方面</li>
 </ul>
-<p>==打包/解包 &amp; 压缩/解压==</p>
+<ol>
+<li>将样式表放到页面顶部</li>
+<li>不使用CSS表达式</li>
+</ol>
 <ul>
-<li><p>tar -cvf demo.tar demo/ #打包demo目录</p>
-</li>
-<li><p>tar -xvf demo.tar #解包</p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>c</td>
-<td>创建归档</td>
-</tr>
-<tr>
-<td>x</td>
-<td>解开归档</td>
-</tr>
-<tr>
-<td>v</td>
-<td>显示执行过程</td>
-</tr>
-<tr>
-<td>f</td>
-<td>指定归档文件名</td>
-</tr>
-<tr>
-<td>w</td>
-<td>逐个将单个文件归档时向用户征求意见</td>
-</tr>
-<tr>
-<td>z</td>
-<td>自动调用gzip压缩/解压</td>
-</tr>
-</tbody></table>
-</li>
+<li>Javascript方面</li>
 </ul>
+<ol>
+<li>将脚本放到页面底部</li>
+<li>将javascript和css从外部引入</li>
+<li>压缩javascript和css</li>
+<li>减少DOM访问</li>
+<li>合理设计事件监听器</li>
+</ol>
+<ul>
+<li>Server方面</li>
+</ul>
+<ol>
+<li>使用CDN</li>
+<li>添加Expires或者Cache-Control响应头</li>
+<li>对组件使用Gzip压缩</li>
+</ol>
 
       
     </div>
@@ -1129,7 +857,7 @@ apt-cache depends  | 列出指定包的依赖关系</code></pre><p>==从源代�
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://tgzzl.github.io/2019/12/23/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://tgzzl.github.io/2019/12/23/react%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.jpg">
@@ -1143,7 +871,7 @@ apt-cache depends  | 列出指定包的依赖关系</code></pre><p>==从源代�
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/23/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2019/12/23/react%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">react笔记</a>
         </h1>
 
         <div class="post-meta">
@@ -1153,7 +881,7 @@ apt-cache depends  | 列出指定包的依赖关系</code></pre><p>==从源代�
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-12-23 10:29:00" itemprop="dateCreated datePublished" datetime="2019-12-23T10:29:00+08:00">2019-12-23</time>
+              <time title="Created: 2019-12-23 10:48:49" itemprop="dateCreated datePublished" datetime="2019-12-23T10:48:49+08:00">2019-12-23</time>
             </span>
 
           
@@ -1167,19 +895,1189 @@ apt-cache depends  | 列出指定包的依赖关系</code></pre><p>==从源代�
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+          <p><img src="http://upload-images.jianshu.io/upload_images/1814354-4bf62e54553a32b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+      
+    </div>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://tgzzl.github.io/2019/12/23/vue%E7%AC%94%E8%AE%B0/">
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="tgzzl">
+      <meta itemprop="description" content="途径梦想 且作停留">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谭广的技术专栏">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/23/vue%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">vue笔记</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-12-23 10:48:37" itemprop="dateCreated datePublished" datetime="2019-12-23T10:48:37+08:00">2019-12-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Vue-js-2-x"><a href="#Vue-js-2-x" class="headerlink" title="Vue.js 2.x"></a>Vue.js 2.x</h1><h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a><a href="https://cn.vuejs.org/v2/guide/instance.html#生命周期图示" target="_blank" rel="noopener">生命周期</a></h4><p><img src="https://cn.vuejs.org/images/lifecycle.png" alt="image"></p>
+<h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a><a href="https://cn.vuejs.org/v2/guide/syntax.html#过滤器" target="_blank" rel="noopener">过滤器</a></h4><p>由于最初计划过滤器的使用场景，是用于文本转换，所以 Vue 2.x 过滤器只能用于双花括号插值(mustache interpolation)和 v-bind 表达式中（后者在 2.1.0+ 版本支持）。对于复杂数据的转换，应该使用计算属性。</p>
+<p>过滤器函数总接收表达式的值 (之前的操作链的结果) 作为第一个参数。</p>
+<p>过滤器可以串联：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; message | filterA | filterB &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Computed-属性-vs-Watch-属性-vs-Methods"><a href="#Computed-属性-vs-Watch-属性-vs-Methods" class="headerlink" title="Computed 属性 vs Watch 属性 vs Methods"></a><a href="https://cn.vuejs.org/v2/guide/computed.html#计算属性" target="_blank" rel="noopener">Computed 属性 vs Watch 属性 vs Methods</a></h4><ul>
+<li>Computed</li>
+</ul>
+<p>计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。</p>
+<p>计算属性默认只有 getter ，不过在需要时你也可以提供一个 setter:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  fullName: &#123;</span><br><span class="line">    &#x2F;&#x2F; getter</span><br><span class="line">    get: function () &#123;</span><br><span class="line">      return this.firstName + &#39; &#39; + this.lastName</span><br><span class="line">    &#125;,</span><br><span class="line">    &#x2F;&#x2F; setter</span><br><span class="line">    set: function (newValue) &#123;</span><br><span class="line">      var names &#x3D; newValue.split(&#39; &#39;)</span><br><span class="line">      this.firstName &#x3D; names[0]</span><br><span class="line">      this.lastName &#x3D; names[names.length - 1]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Methods</li>
+</ul>
+<p>相比而言，只要发生重新渲染，method 调用总会执行该函数。</p>
+<ul>
+<li>Watch</li>
+</ul>
+<p>watch 选项提供一个更通用的方法，来响应数据的变化。当你想要在数据变化响应时，执行异步操作或开销较大的操作，这是很有用的。</p>
+<h4 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a><a href="https://cn.vuejs.org/v2/guide/components.html#自定义事件" target="_blank" rel="noopener">自定义事件</a></h4><ul>
+<li><p>.sync 修饰符</p>
+<p>Vue 1.x 中的 .sync修饰符可以对一个 prop 进行『双向绑定』。因为它破坏了『单向数据流』的假设，在 2.0 中移除了 .sync。</p>
+<p>Vue 2.3.0+ 重新引入了 .sync 修饰符，但是这次它只是作为一个编译时的语法糖存在。它会被扩展为一个自动更新父组件属性的 v-on 侦听器。</p>
+<p>如下代码</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;comp :foo.sync&#x3D;&quot;bar&quot;&gt;&lt;&#x2F;comp&gt;</span><br></pre></td></tr></table></figure>
+
+<p>会被扩展为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;comp :foo&#x3D;&quot;bar&quot; @update:foo&#x3D;&quot;val &#x3D;&gt; bar &#x3D; val&quot;&gt;&lt;&#x2F;comp&gt;</span><br></pre></td></tr></table></figure>
+
+<p>当子组件需要更新 foo 的值时，它需要显式地触发一个更新事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$emit(&#39;update:foo&#39;, newValue)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>定制组件的 v-model (2.2.0+)</li>
+</ul>
+<p>默认情况下，一个组件的 v-model 会使用 value 属性和 input 事件，但是诸如单选框、复选框之类的输入类型可能把 value 属性用作了别的目的。model 选项可以回避这样的冲突：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&#39;my-checkbox&#39;, &#123;</span><br><span class="line">  model: &#123;</span><br><span class="line">    prop: &#39;checked&#39;,</span><br><span class="line">    event: &#39;change&#39;</span><br><span class="line">  &#125;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    checked: Boolean,</span><br><span class="line">    &#x2F;&#x2F; this allows using the &#96;value&#96; prop for a different purpose</span><br><span class="line">    value: String</span><br><span class="line">  &#125;,</span><br><span class="line">  &#x2F;&#x2F; ...</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&lt;my-checkbox v-model&#x3D;&quot;foo&quot; value&#x3D;&quot;some value&quot;&gt;&lt;&#x2F;my-checkbox&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;上述代码等价于：</span><br><span class="line"></span><br><span class="line">&lt;my-checkbox :checked&#x3D;&quot;foo&quot; @change&#x3D;&quot;val &#x3D;&gt; &#123; foo &#x3D; val &#125;&quot; value&#x3D;&quot;some value&quot;&gt;&lt;&#x2F;my-checkbox&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>作用域插槽(2.1.0+)</li>
+</ul>
+<p>作用域插槽更具代表性的用例是列表组件，允许组件自定义应该如何渲染列表每一项：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-awesome-list :items&#x3D;&quot;items&quot;&gt;</span><br><span class="line">  &lt;!-- 作用域插槽也可以是具名的 --&gt;</span><br><span class="line">  &lt;template slot&#x3D;&quot;item&quot; scope&#x3D;&quot;props&quot;&gt;</span><br><span class="line">    &lt;li class&#x3D;&quot;my-fancy-item&quot;&gt;&#123;&#123; props.text &#125;&#125;&lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;template&gt;</span><br><span class="line">&lt;&#x2F;my-awesome-list&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;slot name&#x3D;&quot;item&quot;</span><br><span class="line">    v-for&#x3D;&quot;item in items&quot;</span><br><span class="line">    :text&#x3D;&quot;item.text&quot;&gt;</span><br><span class="line">    &lt;!-- 这里写入备用内容 --&gt;</span><br><span class="line">  &lt;&#x2F;slot&gt;</span><br><span class="line">&lt;&#x2F;ul&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="深入响应式原理"><a href="#深入响应式原理" class="headerlink" title="深入响应式原理"></a><a href="https://cn.vuejs.org/v2/guide/reactivity.html" target="_blank" rel="noopener">深入响应式原理</a></h4><ul>
+<li>如何追踪变化</li>
+</ul>
+<p>把一个普通 JavaScript 对象传给 Vue 实例的 data 选项，Vue 将遍历此对象所有的属性，并使用 <strong><em>==Object.defineProperty==</em></strong> 把这些属性全部转为 getter/setter。Object.defineProperty 是仅 ES5 支持，且无法 shim 的特性，这也就是为什么 Vue 不支持 IE8 以及更低版本浏览器的原因。</p>
+<p>每个组件实例都有相应的 watcher 实例对象，它会在组件渲染的过程中把属性记录为依赖，之后当依赖项的 setter 被调用时，会通知 watcher 重新计算，从而致使它关联的组件得以更新。</p>
+<p><img src="https://cn.vuejs.org/images/data.png" alt="image"></p>
+<ul>
+<li>异步更新队列</li>
+</ul>
+<p>Vue 异步执行 DOM 更新。只要观察到数据变化，Vue 将开启一个队列，并缓冲在同一事件循环中发生的所有数据改变。如果同一个 watcher 被多次触发，只会一次推入到队列中。这种在缓冲时去除重复数据对于避免不必要的计算和 DOM 操作上非常重要。然后，在下一个的事件循环“tick”中，Vue 刷新队列并执行实际（已去重的）工作。Vue 在内部尝试对异步队列使用原生的 Promise.then 和 MutationObserver，如果执行环境不支持，会采用 setTimeout(fn, 0) 代替。</p>
+<p>当设置 vm.someData = ‘new value’ ，该组件不会立即重新渲染。当刷新队列时，组件会在事件循环队列清空时的下一个“tick”更新。<br>为了在数据变化之后等待 Vue 完成更新 DOM ，可以在数据变化之后立即使用 Vue.nextTick(callback) 。这样回调函数在 DOM 更新完成后就会调用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&#39;example&#39;, &#123;</span><br><span class="line">  template: &#39;&lt;span&gt;&#123;&#123; message &#125;&#125;&lt;&#x2F;span&gt;&#39;,</span><br><span class="line">  data: function () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      message: &#39;没有更新&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    updateMessage: function () &#123;</span><br><span class="line">      this.message &#x3D; &#39;更新完成&#39;</span><br><span class="line">      console.log(this.$el.textContent) &#x2F;&#x2F; &#x3D;&gt; &#39;没有更新&#39;</span><br><span class="line">      this.$nextTick(function () &#123;</span><br><span class="line">        console.log(this.$el.textContent) &#x2F;&#x2F; &#x3D;&gt; &#39;更新完成&#39;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://tgzzl.github.io/2019/12/23/%E5%89%8D%E7%AB%AF%E9%AB%98%E9%A2%91%E7%9F%A5%E8%AF%86%E7%82%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="tgzzl">
+      <meta itemprop="description" content="途径梦想 且作停留">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谭广的技术专栏">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/23/%E5%89%8D%E7%AB%AF%E9%AB%98%E9%A2%91%E7%9F%A5%E8%AF%86%E7%82%B9/" class="post-title-link" itemprop="url">前端高频知识点</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-12-23 10:47:32" itemprop="dateCreated datePublished" datetime="2019-12-23T10:47:32+08:00">2019-12-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li><strong>防抖</strong></li>
+</ol>
+<blockquote>
+<p>触发高频事件后n秒内函数只会执行一次，<strong><em>如果n秒内高频事件再次被触发，则重新计算时间</em></strong>。在某段时间内，不管触发了多少次回调，只认最后一次</p>
+</blockquote>
+<ul>
+<li>思路： 每次触发事件时都取消之前的延时调用方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function debounce(fn) &#123;</span><br><span class="line">      &#x2F;&#x2F; 创建一个标记用来存放定时器的返回值</span><br><span class="line">      let timeout &#x3D; null; </span><br><span class="line">      return function () &#123;</span><br><span class="line">        &#x2F;&#x2F; 每当用户输入的时候把前一个 setTimeout clear 掉</span><br><span class="line">        clearTimeout(timeout); </span><br><span class="line">        timeout &#x3D; setTimeout(() &#x3D;&gt; &#123; </span><br><span class="line">        &#x2F;&#x2F; 然后又创建一个新的 setTimeout, 这样就能保证输入字符后的 interval 间隔内如果还有字符输入的话，就不会执行 fn 函数</span><br><span class="line">          fn.apply(this, arguments);</span><br><span class="line">        &#125;, 500);</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    function sayHi() &#123;</span><br><span class="line">      console.log(&#39;防抖成功&#39;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var inp &#x3D; document.getElementById(&#39;inp&#39;);</span><br><span class="line">    inp.addEventListener(&#39;input&#39;, debounce(sayHi)); &#x2F;&#x2F; 防抖</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="2">
+<li><strong>节流</strong></li>
+</ol>
+<blockquote>
+<p>高频事件触发，但在n秒内只会执行一次，所以节流会稀释函数的执行频率。在某段时间内，不管你触发了多少次回调，只认第一次，并在计时结束时给予响应</p>
+</blockquote>
+<ul>
+<li>思路：每次触发事件时都判断当前是否有等待执行的延时函数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function throttle(fn) &#123;</span><br><span class="line">      &#x2F;&#x2F; 通过闭包保存一个标记</span><br><span class="line">      let canRun &#x3D; true; </span><br><span class="line">      return function () &#123;</span><br><span class="line">        if (!canRun) return; &#x2F;&#x2F; 在函数开头判断标记是否为true，不为true则return</span><br><span class="line">        canRun &#x3D; false; &#x2F;&#x2F; 立即设置为false</span><br><span class="line">        setTimeout(() &#x3D;&gt; &#123; &#x2F;&#x2F; 将外部传入的函数的执行放在setTimeout中</span><br><span class="line">          fn.apply(this, arguments);</span><br><span class="line">          &#x2F;&#x2F; 最后在setTimeout执行完毕后再把标记设置为true(关键)表示可以执行下一次循环了。</span><br><span class="line">          &#x2F;&#x2F; 当定时器没有执行的时候标记永远是false，在开头被return掉</span><br><span class="line">          canRun &#x3D; true;</span><br><span class="line">        &#125;, 500);</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    function sayHi(e) &#123;</span><br><span class="line">      console.log(e.target.innerWidth, e.target.innerHeight);</span><br><span class="line">    &#125;</span><br><span class="line">    window.addEventListener(&#39;resize&#39;, throttle(sayHi));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="3">
+<li><strong>浏览器缓存</strong></li>
+</ol>
+<p><img src="https://oss-cn-shenzhen-tg.oss-cn-shenzhen.aliyuncs.com/1051552617626_.pic.jpg" alt="URL到页面的流程"></p>
+<ul>
+<li>Memory Cache</li>
+<li>Service Worker Cache</li>
+<li>HTTP Cache</li>
+<li>Push Cache (http2.0)</li>
+</ul>
+<p>3.1 强缓存</p>
+<p>  命中强缓存的情况下，返回的 HTTP 状态码为 200</p>
+<table>
+<thead>
+<tr>
+<th>Response Headers</th>
+<th>version</th>
+<th>优缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>expires</td>
+<td>1.0</td>
+<td>浏览器对比本地时间和 expires 的时间戳，本地时间可修改，不可靠</td>
+</tr>
+<tr>
+<td>cache-control</td>
+<td>1.1</td>
+<td>替代expires，更准确，优先级高</td>
+</tr>
+</tbody></table>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <p><strong><em>cache</em>-control 的几种值比较</strong></p>
+</li>
+<li><p>max-age=3600, s-maxage=31536000</p>
+<p>s-maxage仅在代理服务器(比如cache cdn)中生效，客户端中我们只考虑max-age</p>
+</li>
+<li><p>public 与 private</p>
+<p>是针对资源是否能够被代理服务缓存而存在的一组对立概念。private：默认值，该资源只能被浏览器缓存。public：既可以被浏览器缓存，也可以被代理服务器缓存</p>
+</li>
+<li><p>no-store 与 no-cache</p>
+<p>no-cache：绕开了浏览器直接向服务端去确认该资源是否过期</p>
+<p>no-store：不使用任何缓存策略</p>
+</li>
+</ul>
+<p>3.2 协商缓存</p>
+<p>  浏览器与服务器合作之下的缓存策略，浏览器需要向服务器去询问缓存的相关信息，从 Last-Modified 到 Etag</p>
+<ul>
+<li><p>Last-Modified   </p>
+<p>首次请求时响应头里返回Last-Modified时间戳，之后每次请求头里带上If-Modified-Since，其值为Last-Modified的值；服务器比对该时间戳和资源在服务器上的最后修改时间，如果未变化则响应304</p>
+<p>弊端：1. 编辑了文件但内容未改变，会被当做新资源，导致重新请求；2. 修改文件的速度在毫秒级时， If-Modified-Since检测不出来变化，导致请求了旧资源</p>
+</li>
+<li><p>Etag</p>
+<p>基于文件内容生成的唯一的标识字符串。首次请求时响应头里返回ETag，之后每次请求头里带上If-None-Match，其值为Etag的值；Etag 的生成过程需要服务器额外付出开销，在感知文件变化上比 Last-Modified 更加准确，优先级也更高，只能作为 Last-Modified 的补充和强化存在</p>
+</li>
+</ul>
+<p>3.3 HTTP 缓存决策指南</p>
+<p><img src="https://oss-cn-shenzhen-tg.oss-cn-shenzhen.aliyuncs.com/1061552619684_.pic_hd.jpg" alt="image"></p>
+<p>资源内容不可复用时，直接为 Cache-Control 设置 no-store，拒绝一切形式的缓存；否则考虑是否每次都需要向服务器进行缓存有效确认，如果需要，那么设 Cache-Control 的值为 no-cache；否则考虑该资源是否可以被代理服务器缓存，根据其结果决定是设置为 private 还是 public；然后考虑该资源的过期时间，设置对应的 max-age 和 s-maxage 值；最后，配置协商缓存需要用到的 Etag、Last-Modified 等参数。</p>
+<p><strong>4. let + for</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">for (let i &#x3D; 0; i &lt; 10; i++) &#123;</span><br><span class="line">  a[i] &#x3D; function () &#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for (let i &#x3D; 0; i &lt; 3; i++) &#123;</span><br><span class="line">  let i &#x3D; &#39;abc&#39;;</span><br><span class="line">  console.log(i);</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; abc</span><br><span class="line">&#x2F;&#x2F; abc</span><br><span class="line">&#x2F;&#x2F; abc</span><br></pre></td></tr></table></figure>
+
+<p>变量i是let声明的，当前的i只在本轮循环有效，所以每一次循环的i其实都是一个新的变量，所以最后输出的是6。 <strong>JavaScript 引擎内部会记住上一轮循环的值，初始化本轮的变量i时，就在上一轮循环的基础上进行计算。</strong></p>
+<p>另外，for循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://tgzzl.github.io/2019/12/23/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="tgzzl">
+      <meta itemprop="description" content="途径梦想 且作停留">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谭广的技术专栏">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/23/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">浏览器课程笔记</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-12-23 10:47:27" itemprop="dateCreated datePublished" datetime="2019-12-23T10:47:27+08:00">2019-12-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="浏览器多进程架构"><a href="#浏览器多进程架构" class="headerlink" title="浏览器多进程架构"></a>浏览器多进程架构</h4><ul>
+<li>浏览器进程</li>
+<li>渲染进程</li>
+</ul>
+<p>核心任务是将 HTML、CSS 和 JavaScript 转换为用户可以与之交互的网页，排版引擎 Blink 和 JavaScript 引擎 V8 都是运行在该进程中，默认情况下，Chrome 会为每个 Tab 标签创建一个渲染进程。出于安全考虑，渲染进程都是运行在沙箱模式下。</p>
+<ul>
+<li>GPU 进程</li>
+<li>网络进程</li>
+<li>插件进程</li>
+</ul>
+<h4 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h4><ul>
+<li>代际假说</li>
+</ul>
+<p>1.大部分对象在内存中存在的时间很短，简单来说，就是很多对象一经分配内存，很快就变得不可访问；<br>2.不死的对象，会活得更久。</p>
+<ul>
+<li>分代收集</li>
+</ul>
+<p>1.新生区：包含“对象区域、空闲区域”，副垃圾回收器负责，采用Scavenge算法 <br>2.老生区：主垃圾回收器负责，采用标记-清除算法</p>
+<p>首先要对对象区域中的垃圾做标记；标记完成之后，就进入垃圾清理阶段，这些存活的对象被复制到空闲区域中，同时这些对象被有序地排列起来，也就相当于完成了内存整理操作，复制后空闲区域就没有内存碎片了。经过两次垃圾回收依然还存活的对象，会被移动到老生区中</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://tgzzl.github.io/2019/12/23/Android%E7%9F%A5%E8%AF%86%E7%82%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="tgzzl">
+      <meta itemprop="description" content="途径梦想 且作停留">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谭广的技术专栏">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/23/Android%E7%9F%A5%E8%AF%86%E7%82%B9/" class="post-title-link" itemprop="url">Android知识点</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-12-23 10:46:45" itemprop="dateCreated datePublished" datetime="2019-12-23T10:46:45+08:00">2019-12-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Java基础知识"><a href="#Java基础知识" class="headerlink" title="Java基础知识"></a>Java基础知识</h1><h3 id="Java-内存分配策略"><a href="#Java-内存分配策略" class="headerlink" title="Java 内存分配策略"></a>Java 内存分配策略</h3><p><img src="http://img.blog.csdn.net/20131226151744250" alt="image"><br><a href="http://blog.csdn.net/ns_code/article/details/17565503" target="_blank" rel="noopener">http://blog.csdn.net/ns_code/article/details/17565503</a></p>
+<ul>
+<li><p>静态存储区（方法区）：</p>
+<p>主要存放静态数据、全局 static 数据和常量。这块内存在程序编译时就已经分配好，并且在程序整个运行期间都存在。</p>
+</li>
+<li><p>栈区：</p>
+<p>当方法被执行时，方法体内的局部变量（其中包括基础数据类型、对象的引用）都在栈上创建，并在方法执行结束时这些局部变量所持有的内存将会自动被释放。因为栈内存分配运算内置于处理器的指令集中，效率很高，但是分配的内存容量有限。</p>
+</li>
+<li><p>堆区： </p>
+<p>又称动态内存分配，通常就是指在程序运行时直接 new 出来的内存（也就是对象的实例，包括该对象其中的所有成员变量）和数组。这部分内存在不使用时将会由 Java 垃圾回收器来负责回收。</p>
+</li>
+</ul>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><ul>
+<li><p>ArrayList</p>
+<p>线程不安全。默认初始10，增长因子0.5</p>
+</li>
+<li><p>LinkedList</p>
+<p>线程不安全。由双向循环链表实现的。</p>
+</li>
+<li><p>Vector</p>
+<p>线程安全。默认初始10，增长因子1.0</p>
+</li>
+<li><p>HashMap</p>
+<p>线程不安全。默认初始16，增长因子0.75</p>
+</li>
+<li><p>HashTable</p>
+<p>线程安全。默认初始11，增长因子0.75</p>
+</li>
+<li><p>ConcurrentHashMap</p>
+<p>线程安全。采用“分段锁”机制，根据 key 的 hashcode 值定位到相应的segment。通过把整个Map分为N个Segment（类似HashTable），可以提供相同的线程安全，但是效率提升N倍</p>
+</li>
+</ul>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p><img src="http://img.my.csdn.net/uploads/201209/07/1347008904_9606.jpg" alt="image"></p>
+<p><a href="http://blog.csdn.net/qy1387/article/details/7752973" target="_blank" rel="noopener">http://blog.csdn.net/qy1387/article/details/7752973</a></p>
+<h1 id="Android基础知识"><a href="#Android基础知识" class="headerlink" title="Android基础知识"></a>Android基础知识</h1><h3 id="onSaveInstanceState-amp-onRestoreInstanceState"><a href="#onSaveInstanceState-amp-onRestoreInstanceState" class="headerlink" title="onSaveInstanceState &amp; onRestoreInstanceState"></a>onSaveInstanceState &amp; onRestoreInstanceState</h3><p>onSaveInstanceState的调用遵循一个重要原则，即当系统“未经你许可”时销毁了你的activity，则onSaveInstanceState会被系统调用，这是系统的责任。</p>
+<p>布局中的每一个View默认实现了onSaveInstanceState()方法，这样的话，这个UI的任何改变都会自动地存储和在activity重新创建的时候自动地恢复。但是这种情况只有在你为这个UI提供了唯一的ID之后才起作用，如果没有提供ID，app将不会存储它的状态。</p>
+<p>由于onSaveInstanceState()方法调用的不确定性，你应该只使用这个方法去记录activity的瞬间状态（UI的状态）。不应该用这个方法去存储持久化数据。当用户离开这个activity的时候应该在onPause()方法中存储持久化数据（例如应该被存储到数据库中的数据）。</p>
+<p>onSaveInstanceState()如果被调用，这个方法会在onStop()前被触发，但系统并不保证是否在onPause()之前或者之后触发。</p>
+<p>onSaveInstanceState方法和onRestoreInstanceState方法“不一定”是成对的被调用的。onRestoreInstanceState被调用的前提是，activity A“确实”被系统销毁了，而如果仅仅是停留在有这种可能性的情况下，则该方法不会被调用。</p>
+<p>onRestoreInstanceState的bundle参数也会传递到onCreate方法中，可以选择在onCreate方法中做数据还原。onRestoreInstanceState在onstart之后执行。</p>
+<h3 id="事件分发"><a href="#事件分发" class="headerlink" title="事件分发"></a>事件分发</h3><p><strong>1、action_down：</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/966283-b122baf33744975d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<ul>
+<li><p>对于 dispatchTouchEvent，onTouchEvent，return true是终结事件传递。return false 是回溯到父View的onTouchEvent方法。</p>
+</li>
+<li><p>ViewGroup 想把自己分发给自己的onTouchEvent，需要拦截器onInterceptTouchEvent方法return true 把事件拦截下来。</p>
+</li>
+<li><p>ViewGroup 的拦截器onInterceptTouchEvent 默认是不拦截的，所以return super.onInterceptTouchEvent()=return false；</p>
+</li>
+<li><p>View 没有拦截器，为了让View可以把事件分发给自己的onTouchEvent，View的dispatchTouchEvent默认实现（super）就是把事件分发给自己的onTouchEvent。</p>
+</li>
+</ul>
+<p><strong>2、action_move &amp; action_up：</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/966283-1b11afac93b12c53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/966283-4713e647448ce48f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>ACTION_DOWN事件在哪个控件消费了（return true）， 那么ACTION_MOVE和ACTION_UP就会从上往下（通过dispatchTouchEvent）做事件分发往下传，就只会传到这个控件，不会继续往下传，如果ACTION_DOWN事件是在dispatchTouchEvent消费，那么事件到此为止停止传递，如果ACTION_DOWN事件是在onTouchEvent消费的，那么会把ACTION_MOVE或ACTION_UP事件传给该控件的onTouchEvent处理并结束传递。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://tgzzl.github.io/2019/12/23/AndroidGithubProjects%E5%88%86%E7%B1%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="tgzzl">
+      <meta itemprop="description" content="途径梦想 且作停留">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谭广的技术专栏">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/23/AndroidGithubProjects%E5%88%86%E7%B1%BB/" class="post-title-link" itemprop="url">AndroidGithubProjects分类</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-12-23 10:46:39" itemprop="dateCreated datePublished" datetime="2019-12-23T10:46:39+08:00">2019-12-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="分类整理平时收集的项目，便于查找。"><a href="#分类整理平时收集的项目，便于查找。" class="headerlink" title="分类整理平时收集的项目，便于查找。"></a>分类整理平时收集的项目，便于查找。</h3><h2 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h2><h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><ol>
+<li><p><a href="https://github.com/sockeqwe/mosby" target="_blank" rel="noopener">Mosby</a></p>
+<p> A Model-View-Presenter library for modern Android apps.</p>
+</li>
+<li><p><a href="https://github.com/CameloeAnthony/AndroidArchitectureCollection" target="_blank" rel="noopener">AndroidArchitectureCollection</a></p>
+</li>
+<li><p><a href="https://github.com/googlesamples/android-architecture" target="_blank" rel="noopener">googlesamples/android-architecture</a></p>
+</li>
+<li><p><a href="https://github.com/glomadrian/MvpCleanArchitecture" target="_blank" rel="noopener">MVP Clean Architecture</a></p>
+</li>
+<li><p><a href="https://github.com/Karumi/Rosie" target="_blank" rel="noopener">Rosie</a></p>
+<p> 快速创建遵循<a href="https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html" target="_blank" rel="noopener">The Clean Architecture</a>的应用。Rosie共分三层，<strong>view</strong>, <strong>domain</strong> 和 <strong>repository</strong>。对于每一层，Rosie提供了大量的类，这将使定义和分离这些问题要容易得多。</p>
+</li>
+<li><p><a href="https://github.com/android10/Android-CleanArchitecture" target="_blank" rel="noopener">Android-CleanArchitecture</a></p>
+<p> <img src="https://github.com/android10/Sample-Data/raw/master/Android-CleanArchitecture/clean_architecture.png" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/dmilicic/Android-Clean-Boilerplate" target="_blank" rel="noopener">Android-Clean-Boilerplate</a></p>
+</li>
+<li><p><a href="https://github.com/ribot/android-boilerplate" target="_blank" rel="noopener">Android Boilerplate</a></p>
+<p> <img src="https://github.com/ribot/android-guidelines/raw/master/architecture_guidelines/architecture_diagram.png" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/donnemartin/system-design-primer" target="_blank" rel="noopener">system-design-primer</a></p>
+<p> 学习如何设计大型系统</p>
+</li>
+</ol>
+<h3 id="热门技术栈（RxJava-amp-RxAndroid-amp-Dagger2-amp-Realm）"><a href="#热门技术栈（RxJava-amp-RxAndroid-amp-Dagger2-amp-Realm）" class="headerlink" title="热门技术栈（RxJava &amp; RxAndroid &amp; Dagger2 &amp; Realm）"></a>热门技术栈（RxJava &amp; RxAndroid &amp; Dagger2 &amp; Realm）</h3><ol>
+<li><p><a href="https://github.com/google/dagger" target="_blank" rel="noopener">Dagger 2</a></p>
+</li>
+<li><p><a href="https://github.com/realm/realm-java" target="_blank" rel="noopener">realm-java</a></p>
+</li>
+<li><p><a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="noopener">RxJava</a></p>
+</li>
+<li><p><a href="https://github.com/ReactiveX/RxAndroid" target="_blank" rel="noopener">RxAndroid</a></p>
+</li>
+<li><p><a href="https://github.com/trello/RxLifecycle" target="_blank" rel="noopener">RxLifecycle</a></p>
+</li>
+<li><p><a href="https://github.com/square/retrofit" target="_blank" rel="noopener">retrofit</a></p>
+</li>
+<li><p><a href="https://github.com/evant/gradle-retrolambda" target="_blank" rel="noopener">gradle-retrolambda</a></p>
+</li>
+<li><p><a href="https://github.com/avast/android-butterknife-zelezny" target="_blank" rel="noopener">android-butterknife-zelezny</a></p>
+</li>
+<li><p><a href="https://github.com/JakeWharton/butterknife" target="_blank" rel="noopener">butterknife</a></p>
+</li>
+<li><p><a href="https://github.com/codeestX/GeekNews" target="_blank" rel="noopener">GeekNews</a></p>
+<p> 极客日报，一款纯粹的阅读App，基于Material Design + MVP + RxJava + Retrofit + Dagger2 + Realm + Glide<br> <img src="https://github.com/codeestX/GeekNews/raw/master/screenshots/GIF3.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/kaushikgopal/RxJava-Android-Samples" target="_blank" rel="noopener">RxJava-Android-Samples</a></p>
+</li>
+<li><p><a href="https://github.com/SpikeKing/wcl-dagger-demo" target="_blank" rel="noopener">wcl-dagger-demo</a></p>
+</li>
+<li><p><a href="https://github.com/laotan7237/EasyReader" target="_blank" rel="noopener">EasyReader</a></p>
+<p> 用知乎和gankio 网易新闻 豆瓣电影的API，模仿网易云音乐UI来完成一个基于Material Design +Rxjava + Retrofit + dagger2 + MVP构架的项目</p>
+</li>
+<li><p><a href="https://github.com/liuguangqiang/Idaily" target="_blank" rel="noopener">Idaily</a></p>
+<p> 使用databinding , dagger2 , retrofit2和rxjava实现的，基于MVVM的知乎日报APP</p>
+</li>
+<li><p><a href="https://github.com/ConnorLin/DataBindingDemo" target="_blank" rel="noopener">DataBindingDemo</a></p>
+<p> 全面介绍databinding的使用</p>
+</li>
+<li><p><a href="https://github.com/ConnorLin/DataBindingDemo" target="_blank" rel="noopener">DataBindingDemo</a></p>
+<p> 全面介绍databinding的使用</p>
+</li>
+</ol>
+<ol>
+<li><p><a href="https://github.com/ConnorLin/DataBindingDemo" target="_blank" rel="noopener">DataBindingDemo</a></p>
+<p> 全面介绍databinding的使用    </p>
+</li>
+<li><p><a href="https://github.com/ConnorLin/DataBindingDemo" target="_blank" rel="noopener">DataBindingDemo</a></p>
+<p> 全面介绍databinding的使用</p>
+</li>
+</ol>
+<h3 id="动态加载-amp-热修复"><a href="#动态加载-amp-热修复" class="headerlink" title="动态加载 &amp; 热修复"></a>动态加载 &amp; 热修复</h3><ol>
+<li><p><a href="https://github.com/jasonross/Nuwa" target="_blank" rel="noopener">Nuwa</a></p>
+<p> hotfix修复Android应用程序。</p>
+</li>
+<li><p><a href="https://github.com/alibaba/dexposed" target="_blank" rel="noopener">alibaba/dexposed</a></p>
+<p> Dexposed是一个功能强大且非侵入性的运行AOP（面向方面编程）框架，基于开源Xposed框架项目。</p>
+</li>
+<li><p><a href="https://github.com/wequick/Small" target="_blank" rel="noopener">Small</a></p>
+<p> 世界那么大，组件那么小。Small，做最轻巧的跨平台插件化框架。</p>
+</li>
+<li><p><a href="https://github.com/mmin18/AndroidDynamicLoader" target="_blank" rel="noopener">Android Dynamic Loader</a></p>
+</li>
+<li><p><a href="https://github.com/alibaba/AndFix" target="_blank" rel="noopener">AndFix</a></p>
+<p> <img src="https://github.com/alibaba/AndFix/raw/master/images/principle.png" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/singwhatiwanna/dynamic-load-apk" target="_blank" rel="noopener">dynamic-load-apk</a></p>
+</li>
+<li><p><a href="https://github.com/CtripMobile/DynamicAPK" target="_blank" rel="noopener">DynamicAPK</a></p>
+</li>
+<li><p><a href="https://github.com/DroidPluginTeam/DroidPlugin" target="_blank" rel="noopener">Droid Plugin</a></p>
+</li>
+<li><p><a href="https://github.com/cundong/SmartAppUpdates" target="_blank" rel="noopener">SmartAppUpdates</a></p>
+</li>
+</ol>
+<h3 id="MaterialDesign"><a href="#MaterialDesign" class="headerlink" title="MaterialDesign"></a>MaterialDesign</h3><ol>
+<li><p><a href="https://github.com/1sters/material_design_zh" target="_blank" rel="noopener">material_design_zh</a></p>
+</li>
+<li><p><a href="https://github.com/google/material-design-icons" target="_blank" rel="noopener">Material design icons</a></p>
+</li>
+<li><p><a href="https://github.com/lightSky/Awesome-MaterialDesign" target="_blank" rel="noopener">Awesome-MaterialDesign</a></p>
+</li>
+<li><p><a href="https://github.com/wasabeef/awesome-android-ui" target="_blank" rel="noopener">awesome-android-ui</a></p>
+</li>
+<li><p><a href="https://github.com/balysv/material-menu" target="_blank" rel="noopener">Material Menu</a></p>
+<p> <img src="https://camo.githubusercontent.com/642bd91749dce58abfba00fe1cefdf2cf4213fd3/68747470733a2f2f7261772e6769746875622e636f6d2f62616c7973762f6d6174657269616c2d6d656e752f6d61737465722f6172742f64656d6f2e676966" alt="image"><br> <img src="https://camo.githubusercontent.com/a45273254d6db820e87b8291a0917420f542612c/68747470733a2f2f7261772e6769746875622e636f6d2f62616c7973762f6d6174657269616c2d6d656e752f6d61737465722f6172742f64656d6f5f6472617765722e676966" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/dexafree/MaterialList" target="_blank" rel="noopener">MaterialList</a></p>
+</li>
+<li><p><a href="https://github.com/futuresimple/android-floating-action-button" target="_blank" rel="noopener">FloatingActionButton</a></p>
+</li>
+<li><p><a href="https://github.com/afollestad/material-dialogs" target="_blank" rel="noopener">Material Dialogs</a></p>
+<p> <img src="https://raw.githubusercontent.com/afollestad/material-dialogs/master/art/readmeshowcase.png" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/navasmdc/MaterialDesignLibrary" target="_blank" rel="noopener">MaterialDesignLibrary</a></p>
+</li>
+<li><p><a href="https://github.com/code-mc/material-icon-lib" target="_blank" rel="noopener">Material Icon Library</a></p>
+</li>
+<li><p><a href="https://github.com/rey5137/material" target="_blank" rel="noopener">material</a></p>
+</li>
+<li><p><a href="https://github.com/mikepenz/MaterialDrawer" target="_blank" rel="noopener">MaterialDrawer</a></p>
+</li>
+<li><p><a href="https://github.com/glomadrian/material-animated-switch" target="_blank" rel="noopener">material-animated-switch</a></p>
+</li>
+<li><p><a href="https://github.com/frogermcs/InstaMaterial" target="_blank" rel="noopener">InstaMaterial</a></p>
+</li>
+<li><p><a href="https://github.com/tekinarslan/AndroidMaterialDesignToolbar" target="_blank" rel="noopener">AndroidMaterialDesignToolbar</a></p>
+</li>
+<li><p><a href="https://github.com/theDazzler/droidicon" target="_blank" rel="noopener">droidicon</a></p>
+</li>
+</ol>
+<h3 id="Android-5-0-新特性"><a href="#Android-5-0-新特性" class="headerlink" title="Android 5.0+ 新特性"></a>Android 5.0+ 新特性</h3><ol>
+<li><p><a href="https://github.com/chrisbanes/cheesesquare" target="_blank" rel="noopener">Cheesesquare Sample</a></p>
+</li>
+<li><p><a href="https://github.com/andremion/Music-Player" target="_blank" rel="noopener">Music Player</a></p>
+<p> <img src="https://raw.githubusercontent.com/andremion/Music-Player/master/art/music_player_concept_cropped.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/danielzeller/Depth-LIB-Android-" target="_blank" rel="noopener">Depth-LIB-Android</a></p>
+<p> <img src="https://camo.githubusercontent.com/b55c62484bb6a7d4b5280988d5cbaf993ca6579f/68747470733a2f2f6431337961637572716a676172612e636c6f756466726f6e742e6e65742f75736572732f3635353434392f73637265656e73686f74732f323137393334322f6d656e755f64726962626c652e676966" alt="This library adds depth/thickness to views."></p>
+</li>
+<li><p><a href="https://github.com/saulmm/CoordinatorBehaviorExample" target="_blank" rel="noopener">CoordinatorBehaviorExample</a></p>
+<p> <img src="https://github.com/saulmm/CoordinatorLayoutExample/raw/master/art/hammerheadLMY48Isaulmm08162015053205.gif?raw=true" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/googlesamples/android-topeka" target="_blank" rel="noopener">android-topeka</a></p>
+<p> <img src="https://github.com/googlesamples/android-topeka/raw/master/screenshots/categories.png" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/rahulparsani/google-io-2014-compat" target="_blank" rel="noopener">google-io-2014-compat</a></p>
+</li>
+<li><p><a href="https://github.com/google/iosched" target="_blank" rel="noopener">iosched</a></p>
+<p> The Google I/O 2015 Android App</p>
+</li>
+<li><p><a href="https://github.com/mikepenz/LollipopShowcase" target="_blank" rel="noopener">LollipopShowcase</a></p>
+<p> <img src="https://raw.githubusercontent.com/mikepenz/Android-LollipopShowcase/master/DEV/screenshots/screenshot_1_small.jpg" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/ksoichiro/Android-ObservableScrollView" target="_blank" rel="noopener">Android-ObservableScrollView</a></p>
+<p> <img src="https://raw.githubusercontent.com/ksoichiro/Android-ObservableScrollView/master/samples/images/demo10.gif" alt="image">)<img src="https://raw.githubusercontent.com/ksoichiro/Android-ObservableScrollView/master/samples/images/demo11.gif" alt="image">)<img src="https://raw.githubusercontent.com/ksoichiro/Android-ObservableScrollView/master/samples/images/demo12.gif" alt="image">)<img src="https://raw.githubusercontent.com/ksoichiro/Android-ObservableScrollView/master/samples/images/demo13.gif" alt="image">)<img src="https://raw.githubusercontent.com/ksoichiro/Android-ObservableScrollView/master/samples/images/demo1.gif" alt="image">)<img src="https://raw.githubusercontent.com/ksoichiro/Android-ObservableScrollView/master/samples/images/demo2.gif" alt="image">)<img src="https://raw.githubusercontent.com/ksoichiro/Android-ObservableScrollView/master/samples/images/demo3.gif" alt="image">)<img src="https://raw.githubusercontent.com/ksoichiro/Android-ObservableScrollView/master/samples/images/demo4.gif" alt="image">)<img src="https://raw.githubusercontent.com/ksoichiro/Android-ObservableScrollView/master/samples/images/demo5.gif" alt="image">)<img src="https://raw.githubusercontent.com/ksoichiro/Android-ObservableScrollView/master/samples/images/demo6.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/mxn21/FlowingDrawer" target="_blank" rel="noopener">FlowingDrawer</a></p>
+<p> <img src="https://camo.githubusercontent.com/a7131784a75e6f07646108b8304b0a0d4efd306b/687474703a2f2f62616f62616f6c6f7665796f752e636f6d2f666c6f77696e676472617765722e676966" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/nickbutcher/plaid" target="_blank" rel="noopener">plaid</a></p>
+<p> <img src="https://github.com/nickbutcher/plaid/raw/master/screenshots/plaid_demo.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/Yalantis/Euclid" target="_blank" rel="noopener">Euclid</a></p>
+<p> <img src="https://camo.githubusercontent.com/b01a910b14ef3573c9e75ce150ef76e155cbbe98/68747470733a2f2f6431337961637572716a676172612e636c6f756466726f6e742e6e65742f75736572732f3132353035362f73637265656e73686f74732f313734343135372f39396d696c65732d7573657270726f66696c652d616e696d6174696f6e5f312d312d332e676966" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/jgilfelt/SystemBarTint" target="_blank" rel="noopener">SystemBarTint</a></p>
+<p> <img src="https://camo.githubusercontent.com/fbbeaab2048f78e2d4974bb1559544c9f22eccae/68747470733a2f2f7261772e6769746875622e636f6d2f6a67696c66656c742f53797374656d42617254696e742f6d61737465722f73637265656e73686f742e706e67" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/geftimov/android-pathview" target="_blank" rel="noopener">android-pathview</a></p>
+<p> <img src="https://github.com/geftimov/android-pathview/raw/master/art/settings.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/ozodrukh/CircularReveal" target="_blank" rel="noopener">CircularReveal</a></p>
+</li>
+</ol>
+<h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><ol>
+<li><p><a href="https://github.com/grantland/android-autofittextview" target="_blank" rel="noopener">AutoFitTextView</a></p>
+<p> A TextView that automatically resizes text to fit perfectly within its bounds.<br> <img src="https://github.com/grantland/android-autofittextview/raw/master/website/static/autofittextview.gif?raw=true" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/romannurik/muzei" target="_blank" rel="noopener">Muzei Live Wallpaper</a></p>
+<p> A living museum for your Android home screen.<br> <img src="https://camo.githubusercontent.com/972279355b8a627a7a761d137c242ea785916e27/687474703a2f2f6170692e6d757a65692e636f2f7374617469632f6865726f2e6a7067" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/hongyangAndroid/Android-CircleMenu" target="_blank" rel="noopener">Android-CircleMenu</a></p>
+<p> 自定义ViewGroup实现的圆形旋转菜单，支持跟随手指旋转以及快速旋转<br> <img src="https://github.com/hongyangAndroid/CircleMenu/raw/master/sample_zhy_CircleMenu/screen_shot.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/baoyongzhang/android-ActionSheet" target="_blank" rel="noopener">android-ActionSheet</a></p>
+<p> <img src="https://raw.githubusercontent.com/baoyongzhang/ActionSheetForAndroid/master/screenshot-2.png" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/nhaarman/ListViewAnimations" target="_blank" rel="noopener">ListViewAnimations</a></p>
+<p> <img src="https://raw.githubusercontent.com/nhaarman/ListViewAnimations/gh-pages/images/dynamiclistview.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/lecho/hellocharts-android" target="_blank" rel="noopener">HelloCharts for Android</a></p>
+<p> <img src="https://github.com/lecho/hellocharts-android/raw/master/screens/scr_dependecy_preview.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/PhilJay/MPAndroidChart" target="_blank" rel="noopener">MPAndroidChart</a></p>
+<p> <img src="https://camo.githubusercontent.com/4bf136c2fd25bcbeac0bcf363bc8f48dae0651fc/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d5043686172742f6d61737465722f73637265656e73686f74732f67726f7570656462617263686172742e706e67" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/felipecsl/AsymmetricGridView" target="_blank" rel="noopener">AsymmetricGridView</a></p>
+<p> <img src="https://raw.githubusercontent.com/felipecsl/AsymmetricGridView/master/screenshots/ss_5_cols.png" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/tjerkw/Android-SlideExpandableListView" target="_blank" rel="noopener">SlideExpandableListView</a></p>
+<p> <img src="https://github.com/tjerkw/Android-SlideExpandableListView/raw/master/raw/example-screens.png" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/astuetz/PagerSlidingTabStrip" target="_blank" rel="noopener">PagerSlidingTabStrip</a></p>
+<p> <img src="https://camo.githubusercontent.com/e39d7a7c9c815b737d15ee1a62863425579b6446/68747470733a2f2f6c68332e67677068742e636f6d2f50585337456d4868515a6454314f613337396979393148583342795741516e465a4174684d4146615f5148414f484e436c45615855356e784445416a3146326571626b" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/jaydenxiao2016/HighLightGuideView" target="_blank" rel="noopener">HighLightGuideView</a></p>
+<p> 一个用于 app 新功能高亮引导的库,支持圆形、椭圆形、矩形高亮形状<br> <img src="https://github.com/jaydenxiao2016/HighLightGuideView/raw/master/screenshots/device-2016-08-16-161213.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/Y-bao/PullRefreshView" target="_blank" rel="noopener">PullRefreshView</a></p>
+<p> <img src="https://raw.githubusercontent.com/Y-bao/PullRefreshView/master/GIF/1.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/googlesamples/android-UniversalMusicPlayer" target="_blank" rel="noopener">Universal Android Music Player Sample</a></p>
+<p> <img src="https://github.com/googlesamples/android-UniversalMusicPlayer/raw/master/screenshots/phone.png" alt="image">)<img src="https://github.com/googlesamples/android-UniversalMusicPlayer/raw/master/screenshots/phone_lockscreen.png" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/sfsheng0322/StickyHeaderListView" target="_blank" rel="noopener">StickyHeaderListView</a></p>
+<p> <img src="https://github.com/sfsheng0322/StickyHeaderListView/raw/master/screenshots/stickyheader.gif" alt="image">)<img src="https://github.com/sfsheng0322/StickyHeaderListView/raw/master/screenshots/StickyHeaderListView3.png" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/jianghejie/XRecyclerView" target="_blank" rel="noopener">XRecyclerView</a></p>
+<p> <img src="https://github.com/jianghejie/XRecyclerView/raw/master/art/demo.gif" alt="image">)<img src="https://github.com/jianghejie/XRecyclerView/raw/master/art/loadingmoresquarespin.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/mmin18/FlexLayout" target="_blank" rel="noopener">FlexLayout</a></p>
+</li>
+<li><p><a href="https://github.com/waynell/VideoListPlayer" target="_blank" rel="noopener">VideoListPlayer</a></p>
+<p> VideoListPlayer实现了在列表控件（ListView, RecyclerView）中加载并播放视频，并支持滑动时自动播放/暂停的功能。利用该项目，可以轻松实现类似Instagram的视频播放功能</p>
+<p> <img src="https://github.com/waynell/VideoListPlayer/raw/master/art/preview.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/yanzhenjie/SwipeRecyclerView" target="_blank" rel="noopener">SwipeRecyclerView</a></p>
+<p> <img src="https://github.com/yanzhenjie/SwipeRecyclerView/raw/master/image/1.gif?raw=true" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/baoyongzhang/SwipeMenuListView" target="_blank" rel="noopener">SwipeMenuListView</a></p>
+<p> <img src="https://raw.githubusercontent.com/baoyongzhang/SwipeMenuListView/master/demo.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/daimajia/AndroidSwipeLayout" target="_blank" rel="noopener">Android Swipe Layout</a></p>
+<p> <img src="https://camo.githubusercontent.com/878e29e5defd2c64db4a5ec93119e133cab00807/687474703a2f2f7777322e73696e61696d672e636e2f6d773639302f36313064633033346a7731656a6f706c6170777471673230386e3065373464782e676966" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/baoyongzhang/android-PullRefreshLayout" target="_blank" rel="noopener">android-PullRefreshLayout</a></p>
+<p> <img src="https://raw.githubusercontent.com/baoyongzhang/android-PullRefreshLayout/master/demo.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/chrisbanes/Android-PullToRefresh" target="_blank" rel="noopener">Android-PullToRefresh</a></p>
+<p> <img src="https://github.com/chrisbanes/Android-PullToRefresh/raw/master/header_graphic.png" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh" target="_blank" rel="noopener">Ultra Pull To Refresh</a></p>
+<p> <img src="https://camo.githubusercontent.com/21d883e62e35cfee5c6966037372b807222eeca0/687474703a2f2f737261696e2d6769746875622e71696e6975646e2e636f6d2f756c7472612d7074722f636f6e7461696e732d616c6c2d6f662d76696577732e676966" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/Malinskiy/SuperRecyclerView" target="_blank" rel="noopener">SuperRecyclerView</a></p>
+</li>
+<li><p><a href="https://github.com/cymcsg/UltimateRecyclerView" target="_blank" rel="noopener">UltimateRecyclerView</a></p>
+<p> <img src="https://camo.githubusercontent.com/b74a64286a2aae367bf4da39740aa228ce29d489/68747470733a2f2f627974656275636b65742e6f72672f6d61727368616c6368656e2f696d616765732f7261772f343462656231363231323163373139656134303934626437656131633966306364376465346330342f756c74696d61746572656379636c6572766965772f756c74696d6174655f72656379636c657276696577372e676966" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/CymChad/BaseRecyclerViewAdapterHelper" target="_blank" rel="noopener">BaseRecyclerViewAdapterHelper</a></p>
+</li>
+<li><p><a href="https://github.com/sockeqwe/AdapterDelegates" target="_blank" rel="noopener">AdapterDelegates</a></p>
+</li>
+<li><p><a href="https://github.com/Cleveroad/SlidingTutorial-Android" target="_blank" rel="noopener">SlidingTutorial-Android</a></p>
+<p> <img src="https://github.com/Cleveroad/SlidingTutorial-Android/raw/master/images/demo.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/xfumihiro/ViewInspector" target="_blank" rel="noopener">ViewInspector</a></p>
+<p> <img src="https://github.com/xfumihiro/ViewInspector/raw/master/images/sample.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/lisawray/fontbinding" target="_blank" rel="noopener">fontbinding</a></p>
+<p> <img src="https://raw.githubusercontent.com/lisawray/fontbinding/master/screenshot_land.png" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/InQBarna/TableFixHeaders" target="_blank" rel="noopener">TableFixHeaders</a></p>
+<p> <img src="https://camo.githubusercontent.com/feb2eea06ec28c35e9e3c04b32eb21b81732dc81/68747470733a2f2f7261772e6769746875622e636f6d2f496e514261726e612f5461626c65466978486561646572732f6d61737465722f7765622f73637265656e312e706e67" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/donglua/PhotoPicker" target="_blank" rel="noopener">PhotoPicker</a></p>
+<p> <img src="https://camo.githubusercontent.com/d250513e87edf279ef8a4df874f46613216a063e/687474703a2f2f7777322e73696e61696d672e636e2f6c617267652f3565396138316462677731657472613631726e72396a3230367a3063653379752e6a7067" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/motianhuo/wechat" target="_blank" rel="noopener">wechat</a></p>
+<p> <img src="https://raw.githubusercontent.com/motianhuo/wechat/wechat2.0/pic_hd.jpg" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/lzyzsd/CircleProgress" target="_blank" rel="noopener">CircleProgress</a></p>
+<p> <img src="https://raw.githubusercontent.com/lzyzsd/CircleProgress/master/demos/circle_progress.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/Todd-Davies/ProgressWheel" target="_blank" rel="noopener">ProgressWheel</a></p>
+</li>
+<li><p><a href="https://github.com/alamkanak/Android-Week-View" target="_blank" rel="noopener">Android-Week-View</a></p>
+<p> <img src="https://github.com/alamkanak/Android-Week-View/raw/develop/images/screen-shot.png" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/square/android-times-square" target="_blank" rel="noopener">android-times-square</a></p>
+<p> <img src="https://github.com/square/android-times-square/raw/master/timesSquareScreenshot.png" alt="image"></p>
+</li>
+</ol>
+<h3 id="换肤（日、夜间模式切换）"><a href="#换肤（日、夜间模式切换）" class="headerlink" title="换肤（日、夜间模式切换）"></a>换肤（日、夜间模式切换）</h3><ol>
+<li><p><a href="https://github.com/hongyangAndroid/ChangeSkin" target="_blank" rel="noopener">ChangeSkin</a></p>
+<p> 基于插件式的Android换肤框架，支持app内和或者外部插件式提供资源的换肤方案，无需重启Activity。<br> <img src="https://github.com/hongyangAndroid/ChangeSkin/raw/master/skin_sc.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/fengjundev/Android-Skin-Loader" target="_blank" rel="noopener">Android-Skin-Loader</a></p>
+<p> 一个通过动态加载本地皮肤包进行换肤的皮肤框架</p>
+</li>
+<li><p><a href="https://github.com/dersoncheng/MultipleTheme" target="_blank" rel="noopener">MultipleTheme</a></p>
+<p> 真正的支持无缝换肤／夜间模式的Android框架，配合theme和换肤控件框架可以做到无缝切换换肤（无需重启应用和当前页面）。</p>
+</li>
+</ol>
+<h3 id="工具（图片、网咯、数据库、性能、测试）"><a href="#工具（图片、网咯、数据库、性能、测试）" class="headerlink" title="工具（图片、网咯、数据库、性能、测试）"></a>工具（图片、网咯、数据库、性能、测试）</h3><ol>
+<li><p><a href="https://github.com/square/leakcanary" target="_blank" rel="noopener">leakcanary</a></p>
+<p> A memory leak detection library for Android and Java.</p>
+<p> <img src="https://github.com/square/leakcanary/raw/master/assets/screenshot.png" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/markzhai/AndroidPerformanceMonitor" target="_blank" rel="noopener">Android Performance Monitor</a></p>
+<p> BlockCanary是一个Android平台的一个非侵入式的性能监控组件，应用只需要实现一个抽象类，提供一些该组件需要的上下文环境，就可以在平时使用应用的时候检测主线程上的各种卡慢问题，并通过组件提供的各种信息分析出原因并进行修复。</p>
+</li>
+<li><p><a href="https://github.com/Curzibn/Luban" target="_blank" rel="noopener">Luban</a></p>
+<p> Android图片压缩工具，仿微信朋友圈压缩策略</p>
+</li>
+<li><p><a href="https://github.com/lingochamp/FileDownloader" target="_blank" rel="noopener">FileDownloader</a></p>
+<p> Android 文件下载引擎，稳定、高效、简单易用</p>
+<p> <img src="https://github.com/lingochamp/FileDownloader/raw/master/art/parallel_tasks_demo.gif" alt="image">)<img src="https://github.com/lingochamp/FileDownloader/raw/master/art/tasks_manager_demo.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/google/android-classyshark" target="_blank" rel="noopener">ClassyShark</a></p>
+<p> ClassyShark是一个独立的工具。它可以可靠地浏览任何Android的可执行文件，并显示出重要的信息，如类接口和成员，DEX计数和依赖。ClassyShark支持多种格式，包括库（.dex，.aar，的.so），可执行文件（.apk文件，的.jar，的.class）和所有的Android二进制XML。</p>
+</li>
+<li><p><a href="https://github.com/johncarl81/parceler" target="_blank" rel="noopener">Parceler</a></p>
+<p> 实现<strong>Parceler</strong>的轻量级注解框架</p>
+</li>
+<li><p><a href="https://github.com/Yalantis/uCrop" target="_blank" rel="noopener">uCrop - Image Cropping Library for Android</a></p>
+<p> <img src="https://github.com/Yalantis/uCrop/raw/master/preview.gif" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/koush/ion" target="_blank" rel="noopener">ion</a></p>
+<p> Android Asynchronous Networking and Image Loading</p>
+<p> <strong>Get JSON</strong></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Ion.with(context)</span><br><span class="line">    .load(&quot;http:&#x2F;&#x2F;example.com&#x2F;thing.json&quot;)</span><br><span class="line">    .asJsonObject()</span><br><span class="line">    .setCallback(new FutureCallback&lt;JsonObject&gt;() &#123;</span><br><span class="line">       @Override</span><br><span class="line">        public void onCompleted(Exception e, JsonObject result) &#123;</span><br><span class="line">            &#x2F;&#x2F; do stuff with the result or error</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+<p> <strong>Post JSON and read JSON</strong></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">JsonObject json &#x3D; new JsonObject();</span><br><span class="line">    json.addProperty(&quot;foo&quot;, &quot;bar&quot;);</span><br><span class="line">    </span><br><span class="line">    Ion.with(context)</span><br><span class="line">    .load(&quot;http:&#x2F;&#x2F;example.com&#x2F;post&quot;)</span><br><span class="line">    .setJsonObjectBody(json)</span><br><span class="line">    .asJsonObject()</span><br><span class="line">    .setCallback(new FutureCallback&lt;JsonObject&gt;() &#123;</span><br><span class="line">       @Override</span><br><span class="line">        public void onCompleted(Exception e, JsonObject result) &#123;</span><br><span class="line">            &#x2F;&#x2F; do stuff with the result or error</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://github.com/mihaip/dex-method-counts" target="_blank" rel="noopener">dex-method-counts</a></p>
+</li>
+<li><p><a href="https://github.com/LitePalFramework/LitePal" target="_blank" rel="noopener">LitePal for Android</a></p>
+<p> LitePal is an open source Android library that allows developers to use SQLite database extremely easy.</p>
+</li>
+<li><p><a href="https://github.com/bluelinelabs/LoganSquare" target="_blank" rel="noopener">LoganSquare</a></p>
+<p> The fastest JSON parsing and serializing library available for Android.</p>
+<p> <img src="https://github.com/bluelinelabs/LoganSquare/raw/development/docs/benchmarks.jpg" alt="image"></p>
+</li>
+<li><p><a href="https://github.com/yangfuhai/ASimpleCache" target="_blank" rel="noopener">ASimpleCache</a></p>
+<p> ASimpleCache 是一个为android制定的 轻量级的 开源缓存框架。轻量到只有一个java文件（由十几个类精简而来）。</p>
+</li>
+<li><p><a href="https://github.com/grandcentrix/tray" target="_blank" rel="noopener">Tray</a> </p>
+<p> a SharedPreferences replacement for Android.</p>
+</li>
+<li><p><a href="https://github.com/googlesamples/android-testing-templates" target="_blank" rel="noopener">Android Testing Templates</a></p>
+</li>
+</ol>
+<h3 id="知识库"><a href="#知识库" class="headerlink" title="知识库"></a>知识库</h3><ol>
+<li><p><a href="https://github.com/lizhangqu/CoreLink" target="_blank" rel="noopener">CoreLink</a></p>
+<p> Android 开发中的日常积累</p>
+</li>
+<li><p><a href="https://github.com/kesenhoo/android-training-course-in-chinese" target="_blank" rel="noopener">Android官方培训课程中文版</a></p>
+</li>
+<li><p><a href="https://github.com/Trinea/android-open-project" target="_blank" rel="noopener">Android 开源项目分类汇总</a></p>
+</li>
+<li><p><a href="https://github.com/JackyAndroid/AndroidInterview-Q-A" target="_blank" rel="noopener">国内一线互联网公司内部面试题库</a></p>
+</li>
+<li><p><a href="https://github.com/ZQiang94/Andriod-collect-blogs" target="_blank" rel="noopener">Andriod-collect-blogs</a></p>
+</li>
+<li><p><a href="https://github.com/android-cn/android-dev-cn" target="_blank" rel="noopener">一些国内 Android 开发者信息</a></p>
+</li>
+<li><p><a href="https://github.com/LittleFriendsGroup/AndroidSdkSourceAnalysis" target="_blank" rel="noopener">Android SDK 源码解析</a></p>
+</li>
+<li><p><a href="https://github.com/GeniusVJR/LearningNotes" target="_blank" rel="noopener">LearningNotes</a></p>
+</li>
+<li><p><a href="https://github.com/DiyCodes/code_news" target="_blank" rel="noopener">Diycode每日精选</a></p>
+</li>
+<li><p><a href="https://github.com/Lafree317/ShareAndroidResource" target="_blank" rel="noopener">ShareAndroidResource</a></p>
+</li>
+<li><p><a href="https://github.com/codepath/android_guides" target="_blank" rel="noopener">CodePath Android Cliffnotes</a></p>
+</li>
+<li><p><a href="https://github.com/tangqi92/Android-Tips" target="_blank" rel="noopener">Android-Tips</a></p>
+</li>
+<li><p><a href="https://github.com/hehonghui/android-tech-frontier" target="_blank" rel="noopener">android-tech-frontier</a></p>
+<p> 一个定期翻译国外Android优质的技术、开源库、软件架构设计、测试等文章的开源项目 <a href="http://www.devtf.cn" target="_blank" rel="noopener">http://www.devtf.cn</a></p>
+</li>
+<li><p><a href="https://github.com/futurice/android-best-practices" target="_blank" rel="noopener">android-best-practices</a></p>
+</li>
+</ol>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ol>
+<li><p><a href="https://github.com/pockethub/PocketHub" target="_blank" rel="noopener">PocketHub</a></p>
+</li>
+<li><p><a href="https://github.com/felixpalmer/android-visualizer" target="_blank" rel="noopener">android-visualizer</a></p>
+</li>
+<li><p><a href="https://github.com/TooTallNate/Java-WebSocket" target="_blank" rel="noopener">Java-WebSocket</a></p>
+</li>
+<li><p><a href="https://github.com/crossbario/autobahn-android" target="_blank" rel="noopener">AutobahnAndroid</a></p>
+</li>
+</ol>
+<h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><h3 id="React技术栈"><a href="#React技术栈" class="headerlink" title="React技术栈"></a>React技术栈</h3><ol>
+<li><p><a href="https://github.com/facebook/react" target="_blank" rel="noopener">React</a></p>
+</li>
+<li><p><a href="https://github.com/ReactTraining/react-router" target="_blank" rel="noopener">React Router</a></p>
+</li>
+<li><p><a href="https://github.com/reactjs/react-tutorial" target="_blank" rel="noopener">React Tutorial</a></p>
+</li>
+<li><p><a href="https://github.com/react-bootstrap/react-bootstrap" target="_blank" rel="noopener">React-Bootstrap</a></p>
+</li>
+<li><p><a href="https://github.com/reactjs/redux" target="_blank" rel="noopener">redux</a></p>
+</li>
+<li><p><a href="https://github.com/facebook/redex" target="_blank" rel="noopener">redex</a></p>
+</li>
+<li><p><a href="https://github.com/reactjs/react-redux" target="_blank" rel="noopener">React Redux</a></p>
+</li>
+<li><p><a href="https://github.com/reactjs/react-router-redux" target="_blank" rel="noopener">react-router-redux</a></p>
+</li>
+<li><p><a href="https://github.com/Flipboard/react-canvas" target="_blank" rel="noopener">react-canvas</a></p>
+</li>
+<li><p><a href="https://github.com/yelouafi/redux-saga" target="_blank" rel="noopener">redux-saga</a></p>
+</li>
+<li><p><a href="https://github.com/kriasoft/react-starter-kit" target="_blank" rel="noopener">React Starter Kit</a></p>
+</li>
+<li><p><a href="https://github.com/facebook/immutable-js" target="_blank" rel="noopener">Immutable collections for JavaScript</a></p>
+</li>
+<li><p><a href="https://github.com/ruanyf/react-demos" target="_blank" rel="noopener">react-demos</a></p>
+</li>
+<li><p><a href="https://github.com/reactjs/reselect" target="_blank" rel="noopener">Reselect</a></p>
+</li>
+<li><p><a href="https://github.com/xgrommx/awesome-redux" target="_blank" rel="noopener">Awesome Redux</a></p>
+</li>
+<li><p><a href="https://github.com/backstopmedia/bleeding-edge-sample-app" target="_blank" rel="noopener">bleeding-edge-sample-app</a></p>
+</li>
+</ol>
+<h3 id="ReactNative"><a href="#ReactNative" class="headerlink" title="ReactNative"></a>ReactNative</h3><ol>
+<li><p><a href="https://github.com/facebook/react-native" target="_blank" rel="noopener">React Native</a></p>
+</li>
+<li><p><a href="https://github.com/reactnativecn/react-native-guide" target="_blank" rel="noopener">React-Native学习指南</a></p>
+</li>
+<li><p><a href="https://github.com/Eleme-IMF/xReddit" target="_blank" rel="noopener">xReddit</a></p>
+</li>
+<li><p><a href="https://github.com/skv-headless/react-native-scrollable-tab-view" target="_blank" rel="noopener">react-native-scrollable-tab-view</a></p>
+</li>
+<li><p><a href="https://github.com/fbsamples/f8app" target="_blank" rel="noopener">F8 App 2016</a></p>
+</li>
+<li><p><a href="https://github.com/binggg/mrn" target="_blank" rel="noopener">mrn</a></p>
+<p> A Material Design style React Native component library.</p>
+</li>
+<li><p><a href="https://github.com/react-native-material-design/react-native-material-design" target="_blank" rel="noopener">React Native Material Design</a></p>
+</li>
+<li><p><a href="https://github.com/race604/ZhiHuDaily-React-Native" target="_blank" rel="noopener">ZhiHuDaily-React-Native</a></p>
+</li>
+</ol>
+<h3 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery"></a>JQuery</h3><ol>
+<li><p><a href="https://github.com/JimmyLv/nobackend.website" target="_blank" rel="noopener">NoBackEnd Website</a></p>
+</li>
+<li><p><a href="https://github.com/touchstonejs/touchstonejs" target="_blank" rel="noopener">touchstonejs</a></p>
+</li>
+<li><p><a href="https://github.com/lihongxun945/jquery-weui" target="_blank" rel="noopener">jQuery WeUI - 打造微信公众号开发的瑞士军刀</a></p>
+</li>
+<li><p><a href="https://github.com/weui/weui" target="_blank" rel="noopener">WeUI 为微信 Web 服务量身设计</a></p>
+</li>
+<li><p><a href="https://github.com/cowboy/jquery-tiny-pubsub" target="_blank" rel="noopener">jQuery Tiny Pub/Sub</a></p>
+<p> A really tiny pub/sub implementation for jQuery.</p>
+</li>
+<li><p><a href="https://github.com/WechatFE/vConsole" target="_blank" rel="noopener">vConsole</a></p>
+<p> 一个轻量、可拓展、针对手机网页的前端开发者调试面板</p>
+</li>
+</ol>
+<h3 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h3><ol>
+<li><p><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a></p>
+</li>
+<li><p><a href="https://github.com/webrtc/samples" target="_blank" rel="noopener">WebRTC code samples</a></p>
+</li>
+<li><p><a href="https://github.com/JakeWharton/pidcat" target="_blank" rel="noopener">PID Cat</a></p>
+</li>
+<li><p><a href="https://github.com/facebook/nuclide" target="_blank" rel="noopener">Nuclide</a></p>
+</li>
+<li><p><a href="https://github.com/linfaxin/AndroidUIX" target="_blank" rel="noopener">AndroidUIX</a></p>
+<p> 移植Android的UI组件到Web端, 以Android的方式来制作高性能优体验的WebApp</p>
+</li>
+<li><p><a href="https://github.com/driftyco/ionic" target="_blank" rel="noopener">ionic</a></p>
+</li>
+</ol>
+<h2 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a>Ruby</h2><h3 id="React-on-Rails"><a href="#React-on-Rails" class="headerlink" title="React on Rails"></a>React on Rails</h3><ol>
+<li><p><a href="https://github.com/reactjs/react-rails" target="_blank" rel="noopener">react-rails</a></p>
+</li>
+<li><p><a href="https://github.com/shakacode/react_on_rails" target="_blank" rel="noopener">React on Rails</a></p>
+</li>
+<li><p><a href="https://github.com/cottonwoodcoding/webpack-rails-react" target="_blank" rel="noopener">webpack-rails-react</a></p>
+</li>
+<li><p><a href="https://github.com/shakacode/react-webpack-rails-tutorial" target="_blank" rel="noopener">react-webpack-rails-tutorial</a></p>
+</li>
+<li><p><a href="https://github.com/bbatsov/ruby-style-guide" target="_blank" rel="noopener">ruby-style-guide</a></p>
+</li>
+</ol>
+<h3 id="其他-2"><a href="#其他-2" class="headerlink" title="其他"></a>其他</h3><ol>
+<li><p><a href="https://github.com/zepplock/FFRRIWB" target="_blank" rel="noopener">FFRRIWB on Rails</a></p>
+</li>
+<li><p><a href="https://github.com/teampoltergeist/poltergeist" target="_blank" rel="noopener">Poltergeist - A PhantomJS driver for Capybara</a></p>
+</li>
+<li><p><a href="https://github.com/rspec/rspec-rails" target="_blank" rel="noopener">rspec-rails</a></p>
+</li>
+<li><p><a href="https://github.com/rails/rails" target="_blank" rel="noopener">Welcome to Rails</a></p>
+</li>
+<li><p><a href="https://github.com/geokit/geokit" target="_blank" rel="noopener">geokit</a></p>
+</li>
+</ol>
+<h2 id="其他-3"><a href="#其他-3" class="headerlink" title="其他"></a>其他</h2><ol>
+<li><p><a href="https://github.com/zealdocs/zeal" target="_blank" rel="noopener">Zeal</a></p>
+<p> Zeal is a simple offline documentation browser inspired by <a href="https://kapeli.com/dash" target="_blank" rel="noopener">Dash</a></p>
+</li>
+<li><p><a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">免费的编程中文书籍索引</a></p>
+</li>
+<li><p><a href="https://github.com/inconshreveable/ngrok" target="_blank" rel="noopener">ngrok - Introspected tunnels to localhost (homepage)</a></p>
+</li>
+<li><p><a href="https://github.com/shadowsocks/shadowsocks-android" target="_blank" rel="noopener">shadowsocks-android</a></p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://tgzzl.github.io/2019/12/23/Android%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="tgzzl">
+      <meta itemprop="description" content="途径梦想 且作停留">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谭广的技术专栏">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/23/Android%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/" class="post-title-link" itemprop="url">Android源码编译</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-12-23 10:46:34 / Modified: 10:46:35" itemprop="dateCreated datePublished" datetime="2019-12-23T10:46:34+08:00">2019-12-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="编译Android源码"><a href="#编译Android源码" class="headerlink" title="编译Android源码"></a>编译Android源码</h3><ul>
+<li><p><code>PATH=~/bin:$PATH</code></p>
+</li>
+<li><p><a href="http://note.youdao.com/https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/" target="_blank" rel="noopener">参照清华大学开源软件镜像站下载源码</a> </p>
+</li>
+<li><p>repo sync 执行失败，提示：.repo/manifests/: contains uncommitted changes</p>
+<p>  解决方案：1、cd .repo/manifests  2、git stash  3、git clean -f -d</p>
+</li>
+<li><p>Cannot remove project “xxx”: uncommitted changes are present. commit changes, then run sync again</p>
+<p>  解决方案：1、cd .repo/manifests  2、git reset –hard  3、cd ../../  4、 repo sync</p>
+</li>
+</ul>
+<h3 id="ubuntu16-0-4-build-android4-2-2"><a href="#ubuntu16-0-4-build-android4-2-2" class="headerlink" title="ubuntu16.0.4 build android4.2.2"></a>ubuntu16.0.4 build android4.2.2</h3><p>  参考文档：</p>
+<p>  <a href="https://source.android.com/source/requirements" target="_blank" rel="noopener">https://source.android.com/source/requirements</a></p>
+<p>  <a href="http://blog.csdn.net/pcaxb/article/details/46834749" target="_blank" rel="noopener">http://blog.csdn.net/pcaxb/article/details/46834749</a></p>
+<p>  <a href="http://www.jianshu.com/p/2b2c723825a9" target="_blank" rel="noopener">http://www.jianshu.com/p/2b2c723825a9</a></p>
+<p>  <a href="http://www.cnblogs.com/davidsky/archive/2013/06/01/3113310.html" target="_blank" rel="noopener">http://www.cnblogs.com/davidsky/archive/2013/06/01/3113310.html</a></p>
+<ul>
+<li>安装编译工具</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo apt-get install -y git flex bison gperf build-essential libncurses5-dev:i386</span><br><span class="line"></span><br><span class="line">sudo apt-get install libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-dev g++-multilib</span><br><span class="line"></span><br><span class="line">sudo apt-get install tofrodos python-markdown libxml2-utils xsltproc zlib1g-dev:i386</span><br><span class="line"></span><br><span class="line">sudo apt-get install dpkg-dev libsdl1.2-dev libesd0-dev</span><br><span class="line"></span><br><span class="line">sudo apt-get install git-core gnupg flex bison gperf build-essential</span><br><span class="line"></span><br><span class="line">sudo apt-get install zip curl zlib1g-dev gcc-multilib g++-multilib</span><br><span class="line"></span><br><span class="line">sudo apt-get install libc6-dev-i386</span><br><span class="line"></span><br><span class="line">sudo apt-get install lib32ncurses5-dev x11proto-core-dev libx11-dev</span><br><span class="line"></span><br><span class="line">sudo apt-get install lib32z-dev ccache</span><br><span class="line"></span><br><span class="line">sudo apt-get install libgl1-mesa-dev libxml2-utils xsltproc unzip m4</span><br><span class="line"></span><br><span class="line">sudo apt-get install libswitch-perl</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>安装jdk6</p>
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR" target="_blank" rel="noopener">下载jdk6</a></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo mkdir &#x2F;usr&#x2F;local&#x2F;jvm</span><br><span class="line"></span><br><span class="line">sudo cp jdk-6u45-linux-i586.bin &#x2F;usr&#x2F;local&#x2F;jvm</span><br><span class="line"></span><br><span class="line">cd &#x2F;usr&#x2F;local&#x2F;jvm</span><br><span class="line"></span><br><span class="line">sudo chmod u+x jdk-6u45-linux-i586.bin</span><br><span class="line"></span><br><span class="line">sudo .&#x2F;jdk-6u45-linux-i586.bin</span><br><span class="line"></span><br><span class="line">sudo gedit &#x2F;etc&#x2F;profile</span><br><span class="line"></span><br><span class="line">在文件末尾输入以下字符串：</span><br><span class="line">export JAVA_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;jvm&#x2F;jdk1.6.0_45</span><br><span class="line">export JRE_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;jvm&#x2F;jdk1.6.0_45&#x2F;jre</span><br><span class="line">export CLASSPATH&#x3D;.:$CLASSPATH:$JAVA_HOME&#x2F;lib:$JRE_HOME&#x2F;lib</span><br><span class="line">export PATH&#x3D;$PATH:$JAVA_HOME&#x2F;bin:$JRE_HOME&#x2F;bin</span><br><span class="line"></span><br><span class="line">保存退出文件后</span><br><span class="line">source &#x2F;etc&#x2F;profile</span><br><span class="line"></span><br><span class="line">java -version #显示java version &quot;1.6.0_45&quot;则为配置成功</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>安装make</p>
+<p>由于ubuntu16.04自带make版本过高，无法编译。因此需要将make降至3.81或3.82版本</p>
+<p><a href="ftp://ftp.gnu.org/gnu/make/" target="_blank" rel="noopener">下载make-3.82.tar.gz</a></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">tar -zxvf make-3.82.tar.gz</span><br><span class="line"></span><br><span class="line">cd make-3.82</span><br><span class="line"></span><br><span class="line">.&#x2F;configure</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line"></span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+
+<p>  问题：</p>
+<ul>
+<li><p>out/target/product/generic/system/fonts/DroidSans.ttf 只读文件系统</p>
+<p>  <a href="https://my.oschina.net/caohong/blog/290919" target="_blank" rel="noopener">VirtualBox上编译android遇到共享文件夹引起的问题</a></p>
+<p>  VBoxManage setextradata <em>==VM_NAME==</em> VBoxInternal2/SharedFoldersEnableSymlinksCreate/<em>==SHARE_FOLDER_NAME==</em> 1</p>
+<p>  VBoxManage getextradata <em>==VM_NAME==</em> enumerate</p>
+<blockquote>
+<p>  VM_NAME：虚拟机名字，SHARE_FOLDER_NAME：共享文件夹名字</p>
+</blockquote>
+</li>
+<li><p>aaa</p>
+<p> Creating semantic graph file</p>
+<p> Determinization</p>
+<p> found max_script_label 1</p>
+<p> info: Using parfile external/srec/config/en.us/baseline11k.par</p>
+<p> info: Using dictionary dictionary/cmu6plus.ok.zip</p>
+<p> using word_penalty 40</p>
+<p> info: reading word symbols</p>
+<p> out/target/product/generic/system/usr/srec/config/en.us/grammars/boolean.map</p>
+<p> info: reading parser symbols</p>
+<p> out/target/product/generic/system/usr/srec/config/en.us/grammars/boolean.omap</p>
+<p> info: reading model symbols external/srec/config/en.us/models/models128x.map</p>
+<p> found max_script_label 34</p>
+<p> E/dalvikvm( 4370): unable to mmap DEX cache: Invalid argument</p>
+<p> E/dalvikvm( 4370): Optimization failed</p>
+<p> info: Using parfile external/srec/config/en.us/baseline11k.par</p>
+<p> make: *** [out/target/product/generic/dex_bootjars/system/framework/core.odex] 错误 255</p>
+<p> info: Using dictionary dictionary/cmu6plus.ok.zip</p>
+<p> make: *** 正在删除文件“out/target/product/generic/dex_bootjars/system/framework/core.odex”</p>
+<p> make: *** 正在等待未完成的任务….</p>
+</li>
+</ul>
+<p>sudo apt-get install git gnupg flex bison gperf build-essential <br>  zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev <br>  libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 <br>  libgl1-mesa-dev g++-multilib mingw-w64 tofrodos</p>
+<p>sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so</p>
+<p>sudo apt-get install linux-libc-dev:i386</p>
+<p>sudo apt-get install libc6-dev-i386</p>
+<p>Install: out/host/linux-x86/framework/liblzf.jar</p>
+<h2 id="Running-sdk-eclipse-scripts-create-all-symlinks-sh"><a href="#Running-sdk-eclipse-scripts-create-all-symlinks-sh" class="headerlink" title="Running sdk/eclipse/scripts/create_all_symlinks.sh"></a>Running sdk/eclipse/scripts/create_all_symlinks.sh</h2><h3 id="Starting-tools-base-gradlew-publishLocal"><a href="#Starting-tools-base-gradlew-publishLocal" class="headerlink" title="Starting tools/base: gradlew publishLocal"></a>Starting tools/base: gradlew publishLocal</h3><p>sdk/eclipse/scripts/create_all_symlinks.sh: 第 285 行: cd: tools/base: 没有那个文件或目录</p>
+<p>make: *** [out/host/linux-x86/obj/EXECUTABLES/monitor_intermediates/monitor] 错误 1</p>
+<p>Unknown source ‘testutils’ to copy in ‘sdk/eclipse/plugins/com.android.ide.eclipse.tests</p>
+<p>Docs droiddoc: out/target/common/docs/ds</p>
+<p>/bin/bash: 行 18: 15174 已杀死&emsp;&emsp;&emsp;&emsp;javadoc</p>
+<p>[out/target/common/docs/doc-comment-check-timestamp] 错误 45</p>
+<p><a href="http://www.cnblogs.com/lake-of-embedded-system/p/3641958.html" target="_blank" rel="noopener">http://www.cnblogs.com/lake-of-embedded-system/p/3641958.html</a></p>
 
       
     </div>
@@ -1198,6 +2096,9 @@ apt-cache depends  | 列出指定包的依赖关系</code></pre><p>==从源代�
   </div>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
 
 
@@ -1264,7 +2165,7 @@ apt-cache depends  | 列出指定包的依赖关系</code></pre><p>==从源代�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1299,7 +2200,7 @@ apt-cache depends  | 列出指定包的依赖关系</code></pre><p>==从源代�
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.6.0
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.6.0
   </div>
 
         
@@ -1325,7 +2226,7 @@ apt-cache depends  | 列出指定包的依赖关系</code></pre><p>==从源代�
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>

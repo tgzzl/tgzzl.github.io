@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://tgzzl.github.io').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="SEO合理的title、description、keywords：搜索对着三项的权重逐个减小，title值强调重点即可，重要关键词出现不要超过2次，而且要靠前，不同页面title要有所不同；description把页面内容高度概括，长度合适，不可过分堆砌关键词，不同页面description有所不同；keywords列举出重要关键词即可 重要内容HTML代码放在最前，重要内容不要用js输出 doc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端知识点">
+<meta property="og:url" content="https://tgzzl.github.io/2019/12/23/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
+<meta property="og:site_name" content="谭广的技术专栏">
+<meta property="og:description" content="SEO合理的title、description、keywords：搜索对着三项的权重逐个减小，title值强调重点即可，重要关键词出现不要超过2次，而且要靠前，不同页面title要有所不同；description把页面内容高度概括，长度合适，不可过分堆砌关键词，不同页面description有所不同；keywords列举出重要关键词即可 重要内容HTML代码放在最前，重要内容不要用js输出 doc">
+<meta property="article:published_time" content="2019-12-23T02:49:06.875Z">
+<meta property="article:modified_time" content="2019-12-23T02:49:07.046Z">
+<meta property="article:author" content="tgzzl">
+<meta property="article:tag" content="谭广 Hexo Github">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://tgzzl.github.io/2019/12/23/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E7%82%B9/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>前端知识点 | 谭广的技术专栏</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script async src="//hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">谭广的技术专栏</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">记录点滴</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://tgzzl.github.io/2019/12/23/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E7%82%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="tgzzl">
+      <meta itemprop="description" content="途径梦想 且作停留">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谭广的技术专栏">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端知识点
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-12-23 10:49:06 / Modified: 10:49:07" itemprop="dateCreated datePublished" datetime="2019-12-23T10:49:06+08:00">2019-12-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h4><p>合理的title、description、keywords：搜索对着三项的权重逐个减小，title值强调重点即可，重要关键词出现不要超过2次，而且要靠前，不同页面title要有所不同；description把页面内容高度概括，长度合适，不可过分堆砌关键词，不同页面description有所不同；keywords列举出重要关键词即可</p>
+<p>重要内容HTML代码放在最前，重要内容不要用js输出</p>
+<h4 id="doctype"><a href="#doctype" class="headerlink" title="doctype"></a>doctype</h4><!doctype><p>声明必须处于HTML文档的头部，在<html>标签之前，HTML5中不区分大小写</p>
+<!doctype><p>声明不是一个HTML标签，是一个用于告诉浏览器当前HTMl版本的指令</p>
+<p>现代浏览器的html布局引擎通过检查doctype决定使用兼容模式还是标准模式对文档进行渲染，一些浏览器有一个接近标准模型。DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。在兼容模式中，页面以宽松的向后兼容的方式显示,模拟老式浏览器的行为以防止站点无法工作。</p>
+<p>HTML5不基于SGML，所以不用指定DTD，但是需要doctype来规范浏览器的行为</p>
+<h5 id="常见dotype："><a href="#常见dotype：" class="headerlink" title="常见dotype："></a>常见dotype：</h5><ul>
+<li>HTML4.01</li>
+<li>XHTML1.0 </li>
+<li>HTML 5: <!doctype html></li>
+</ul>
+<h4 id="web语义化"><a href="#web语义化" class="headerlink" title="web语义化"></a>web语义化</h4><p>web语义化是指通过HTML标记表示页面包含的信息，包含了HTML标签的语义化和css命名的语义化。</p>
+<p>HTML标签的语义化是指：通过使用包含语义的标签（如h1-h6）恰当地表示文档结构</p>
+<p>css命名的语义化是指：为html标签添加有意义的class，id补充未表达的语义，如Microformat通过添加符合规则的class描述信息 </p>
+<p>语义化的意义：</p>
+<ul>
+<li>去掉样式后页面呈现清晰的结构</li>
+<li>盲人使用读屏器更好地阅读</li>
+<li>搜索引擎更好地理解页面，有利于收录</li>
+<li>便团队项目的可持续运作及维护</li>
+</ul>
+<h4 id="link-vs-import"><a href="#link-vs-import" class="headerlink" title="link vs @import"></a>link vs @import</h4><ul>
+<li>link属于XHTML标签，除了加载CSS外，还能用于定义RSS, 定义rel连接属性等作用；而@import是CSS提供的，只能用于加载CSS;</li>
+<li>页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;</li>
+<li>import是CSS2.1 提出的，只在IE5以上才能被识别，而link是XHTML标签，无兼容问题;</li>
+</ul>
+<h4 id="css-hack原理及常用hack"><a href="#css-hack原理及常用hack" class="headerlink" title="css hack原理及常用hack"></a>css hack原理及常用hack</h4><p>原理：利用不同浏览器对CSS的支持和解析结果不一样编写针对特定浏览器样式。</p>
+<p>常见的hack有1）属性hack。2）选择器hack。3）IE条件注释</p>
+<h4 id="display-float-position的关系"><a href="#display-float-position的关系" class="headerlink" title="display,float,position的关系"></a>display,float,position的关系</h4><ul>
+<li>如果display为none，那么position和float都不起作用，这种情况下元素不产生框</li>
+<li>否则，如果position值为absolute或者fixed，框就是绝对定位的，float的计算值为none，display表现为block或者table。</li>
+<li>否则，如果float不是none，框是浮动的，display进行调整</li>
+<li>否则，如果元素是根元素，display进行调整</li>
+<li>其他情况下display的值为指定值 </li>
+</ul>
+<p>总结起来：绝对定位、浮动、根元素都需要调整display</p>
+<h4 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h4><p>清除浮动是为了清除使用浮动元素产生的影响。浮动的元素，高度会塌陷，而高度的塌陷使我们页面后面的布局不能正常显示。</p>
+<h4 id="常见的浏览器内核"><a href="#常见的浏览器内核" class="headerlink" title="常见的浏览器内核"></a>常见的浏览器内核</h4><ul>
+<li>Trident内核：IE,MaxThon,TT,The World,360,搜狗浏览器等。[又称MSHTML]</li>
+<li>Gecko内核：Netscape6及以上版本，FF,MozillaSuite/SeaMonkey等</li>
+<li>Presto内核：Opera7及以上。      [Opera内核原为：Presto，现为：Blink;]</li>
+<li>Webkit内核：Safari,Chrome等。   [ Chrome的：Blink（WebKit的分支）]</li>
+</ul>
+<h4 id="HTTP-request-报文结构-amp-HTTP-response-报文结构"><a href="#HTTP-request-报文结构-amp-HTTP-response-报文结构" class="headerlink" title="HTTP request 报文结构 &amp; HTTP response 报文结构"></a>HTTP request 报文结构 &amp; HTTP response 报文结构</h4><p>request：</p>
+<ul>
+<li>首行是Request-Line包括：请求方法，请求URI，协议版本，CRLF</li>
+<li>首行之后是若干行请求头，包括general-header，request-header或者entity-header，每个一行以CRLF结束</li>
+<li>请求头和消息实体之间有一个CRLF分隔</li>
+<li>根据实际请求需要可能包含一个消息实体</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">GET /Protocols/rfc2616/rfc2616-sec5.html HTTP/1.1</span><br><span class="line">Host: www.w3.org</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Cache-Control: max-age=0</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</span><br><span class="line"></span><br><span class="line">name=qiu&amp;age=25</span><br></pre></td></tr></table></figure>
+
+<p>response：</p>
+<ul>
+<li>首行是状态行包括：HTTP版本，状态码，状态描述，后面跟一个CRLF</li>
+<li>首行之后是若干行响应头，包括：通用头部，响应头部，实体头部</li>
+<li>响应头部和响应实体之间用一个CRLF空行分隔</li>
+<li>最后是一个可能的消息实体 </li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">TTP/1.1 200 OK</span><br><span class="line">Date: Tue, 08 Jul 2014 05:28:43 GMT</span><br><span class="line">Server: Apache/2</span><br><span class="line">Last-Modified: Wed, 01 Sep 2004 13:24:52 GMT</span><br><span class="line">ETag: "40d7-3e3073913b100"</span><br><span class="line">Accept-Ranges: bytes</span><br><span class="line">Content-Length: 16599</span><br><span class="line">Cache-Control: max-age=21600</span><br><span class="line"></span><br><span class="line">&#123;"name": "qiu", "age": 25&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="网站性能优化"><a href="#网站性能优化" class="headerlink" title="网站性能优化"></a>网站性能优化</h4><ul>
+<li>content方面</li>
+</ul>
+<ol>
+<li>减少HTTP请求：合并文件、CSS精灵、inline Image</li>
+<li>减少DNS查询：DNS缓存、负载均衡</li>
+<li>Ajax可缓存</li>
+<li>非必须组件延迟加载、未来所需组件预加载</li>
+<li>将资源放到不同的域下：增加域可以提高并行下载量</li>
+</ol>
+<ul>
+<li>css方面</li>
+</ul>
+<ol>
+<li>将样式表放到页面顶部</li>
+<li>不使用CSS表达式</li>
+</ol>
+<ul>
+<li>Javascript方面</li>
+</ul>
+<ol>
+<li>将脚本放到页面底部</li>
+<li>将javascript和css从外部引入</li>
+<li>压缩javascript和css</li>
+<li>减少DOM访问</li>
+<li>合理设计事件监听器</li>
+</ol>
+<ul>
+<li>Server方面</li>
+</ul>
+<ol>
+<li>使用CDN</li>
+<li>添加Expires或者Cache-Control响应头</li>
+<li>对组件使用Gzip压缩</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/23/react%E7%AC%94%E8%AE%B0/" rel="prev" title="react笔记">
+      <i class="fa fa-chevron-left"></i> react笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/23/es5/" rel="next" title="es5">
+      es5 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#SEO"><span class="nav-number">1.</span> <span class="nav-text">SEO</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#doctype"><span class="nav-number">2.</span> <span class="nav-text">doctype</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#常见dotype："><span class="nav-number">2.1.</span> <span class="nav-text">常见dotype：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#web语义化"><span class="nav-number">3.</span> <span class="nav-text">web语义化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#link-vs-import"><span class="nav-number">4.</span> <span class="nav-text">link vs @import</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css-hack原理及常用hack"><span class="nav-number">5.</span> <span class="nav-text">css hack原理及常用hack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#display-float-position的关系"><span class="nav-number">6.</span> <span class="nav-text">display,float,position的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#清除浮动"><span class="nav-number">7.</span> <span class="nav-text">清除浮动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的浏览器内核"><span class="nav-number">8.</span> <span class="nav-text">常见的浏览器内核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-request-报文结构-amp-HTTP-response-报文结构"><span class="nav-number">9.</span> <span class="nav-text">HTTP request 报文结构 &amp; HTTP response 报文结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网站性能优化"><span class="nav-number">10.</span> <span class="nav-text">网站性能优化</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="tgzzl"
+      src="/uploads/avatar.jpg">
+  <p class="site-author-name" itemprop="name">tgzzl</p>
+  <div class="site-description" itemprop="description">途径梦想 且作停留</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tgzzl</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
