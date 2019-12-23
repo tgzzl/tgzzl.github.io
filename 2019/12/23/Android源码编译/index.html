@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://tgzzl.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="编译Android源码 PATH&#x3D;~&#x2F;bin:$PATH  参照清华大学开源软件镜像站下载源码   repo sync 执行失败，提示：.repo&#x2F;manifests&#x2F;: contains uncommitted changes   解决方案：1、cd .repo&#x2F;manifests  2、git stash  3、git clean -f -d  Cannot remove project “x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android源码编译">
+<meta property="og:url" content="https://tgzzl.github.io/2019/12/23/Android%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/index.html">
+<meta property="og:site_name" content="谭广的技术专栏">
+<meta property="og:description" content="编译Android源码 PATH&#x3D;~&#x2F;bin:$PATH  参照清华大学开源软件镜像站下载源码   repo sync 执行失败，提示：.repo&#x2F;manifests&#x2F;: contains uncommitted changes   解决方案：1、cd .repo&#x2F;manifests  2、git stash  3、git clean -f -d  Cannot remove project “x">
+<meta property="article:published_time" content="2019-12-23T02:46:34.899Z">
+<meta property="article:modified_time" content="2019-12-23T02:46:35.058Z">
+<meta property="article:author" content="tgzzl">
+<meta property="article:tag" content="谭广 Hexo Github">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://tgzzl.github.io/2019/12/23/Android%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Android源码编译 | 谭广的技术专栏</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script async src="//hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">谭广的技术专栏</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">记录点滴</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://tgzzl.github.io/2019/12/23/Android%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="tgzzl">
+      <meta itemprop="description" content="途径梦想 且作停留">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谭广的技术专栏">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android源码编译
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-12-23 10:46:34 / Modified: 10:46:35" itemprop="dateCreated datePublished" datetime="2019-12-23T10:46:34+08:00">2019-12-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="编译Android源码"><a href="#编译Android源码" class="headerlink" title="编译Android源码"></a>编译Android源码</h3><ul>
+<li><p><code>PATH=~/bin:$PATH</code></p>
+</li>
+<li><p><a href="http://note.youdao.com/https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/" target="_blank" rel="noopener">参照清华大学开源软件镜像站下载源码</a> </p>
+</li>
+<li><p>repo sync 执行失败，提示：.repo/manifests/: contains uncommitted changes</p>
+<p>  解决方案：1、cd .repo/manifests  2、git stash  3、git clean -f -d</p>
+</li>
+<li><p>Cannot remove project “xxx”: uncommitted changes are present. commit changes, then run sync again</p>
+<p>  解决方案：1、cd .repo/manifests  2、git reset –hard  3、cd ../../  4、 repo sync</p>
+</li>
+</ul>
+<h3 id="ubuntu16-0-4-build-android4-2-2"><a href="#ubuntu16-0-4-build-android4-2-2" class="headerlink" title="ubuntu16.0.4 build android4.2.2"></a>ubuntu16.0.4 build android4.2.2</h3><p>  参考文档：</p>
+<p>  <a href="https://source.android.com/source/requirements" target="_blank" rel="noopener">https://source.android.com/source/requirements</a></p>
+<p>  <a href="http://blog.csdn.net/pcaxb/article/details/46834749" target="_blank" rel="noopener">http://blog.csdn.net/pcaxb/article/details/46834749</a></p>
+<p>  <a href="http://www.jianshu.com/p/2b2c723825a9" target="_blank" rel="noopener">http://www.jianshu.com/p/2b2c723825a9</a></p>
+<p>  <a href="http://www.cnblogs.com/davidsky/archive/2013/06/01/3113310.html" target="_blank" rel="noopener">http://www.cnblogs.com/davidsky/archive/2013/06/01/3113310.html</a></p>
+<ul>
+<li>安装编译工具</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo apt-get install -y git flex bison gperf build-essential libncurses5-dev:i386</span><br><span class="line"></span><br><span class="line">sudo apt-get install libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-dev g++-multilib</span><br><span class="line"></span><br><span class="line">sudo apt-get install tofrodos python-markdown libxml2-utils xsltproc zlib1g-dev:i386</span><br><span class="line"></span><br><span class="line">sudo apt-get install dpkg-dev libsdl1.2-dev libesd0-dev</span><br><span class="line"></span><br><span class="line">sudo apt-get install git-core gnupg flex bison gperf build-essential</span><br><span class="line"></span><br><span class="line">sudo apt-get install zip curl zlib1g-dev gcc-multilib g++-multilib</span><br><span class="line"></span><br><span class="line">sudo apt-get install libc6-dev-i386</span><br><span class="line"></span><br><span class="line">sudo apt-get install lib32ncurses5-dev x11proto-core-dev libx11-dev</span><br><span class="line"></span><br><span class="line">sudo apt-get install lib32z-dev ccache</span><br><span class="line"></span><br><span class="line">sudo apt-get install libgl1-mesa-dev libxml2-utils xsltproc unzip m4</span><br><span class="line"></span><br><span class="line">sudo apt-get install libswitch-perl</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>安装jdk6</p>
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html#jdk-6u45-oth-JPR" target="_blank" rel="noopener">下载jdk6</a></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo mkdir &#x2F;usr&#x2F;local&#x2F;jvm</span><br><span class="line"></span><br><span class="line">sudo cp jdk-6u45-linux-i586.bin &#x2F;usr&#x2F;local&#x2F;jvm</span><br><span class="line"></span><br><span class="line">cd &#x2F;usr&#x2F;local&#x2F;jvm</span><br><span class="line"></span><br><span class="line">sudo chmod u+x jdk-6u45-linux-i586.bin</span><br><span class="line"></span><br><span class="line">sudo .&#x2F;jdk-6u45-linux-i586.bin</span><br><span class="line"></span><br><span class="line">sudo gedit &#x2F;etc&#x2F;profile</span><br><span class="line"></span><br><span class="line">在文件末尾输入以下字符串：</span><br><span class="line">export JAVA_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;jvm&#x2F;jdk1.6.0_45</span><br><span class="line">export JRE_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;jvm&#x2F;jdk1.6.0_45&#x2F;jre</span><br><span class="line">export CLASSPATH&#x3D;.:$CLASSPATH:$JAVA_HOME&#x2F;lib:$JRE_HOME&#x2F;lib</span><br><span class="line">export PATH&#x3D;$PATH:$JAVA_HOME&#x2F;bin:$JRE_HOME&#x2F;bin</span><br><span class="line"></span><br><span class="line">保存退出文件后</span><br><span class="line">source &#x2F;etc&#x2F;profile</span><br><span class="line"></span><br><span class="line">java -version #显示java version &quot;1.6.0_45&quot;则为配置成功</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>安装make</p>
+<p>由于ubuntu16.04自带make版本过高，无法编译。因此需要将make降至3.81或3.82版本</p>
+<p><a href="ftp://ftp.gnu.org/gnu/make/" target="_blank" rel="noopener">下载make-3.82.tar.gz</a></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">tar -zxvf make-3.82.tar.gz</span><br><span class="line"></span><br><span class="line">cd make-3.82</span><br><span class="line"></span><br><span class="line">.&#x2F;configure</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line"></span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+
+<p>  问题：</p>
+<ul>
+<li><p>out/target/product/generic/system/fonts/DroidSans.ttf 只读文件系统</p>
+<p>  <a href="https://my.oschina.net/caohong/blog/290919" target="_blank" rel="noopener">VirtualBox上编译android遇到共享文件夹引起的问题</a></p>
+<p>  VBoxManage setextradata <em>==VM_NAME==</em> VBoxInternal2/SharedFoldersEnableSymlinksCreate/<em>==SHARE_FOLDER_NAME==</em> 1</p>
+<p>  VBoxManage getextradata <em>==VM_NAME==</em> enumerate</p>
+<blockquote>
+<p>  VM_NAME：虚拟机名字，SHARE_FOLDER_NAME：共享文件夹名字</p>
+</blockquote>
+</li>
+<li><p>aaa</p>
+<p> Creating semantic graph file</p>
+<p> Determinization</p>
+<p> found max_script_label 1</p>
+<p> info: Using parfile external/srec/config/en.us/baseline11k.par</p>
+<p> info: Using dictionary dictionary/cmu6plus.ok.zip</p>
+<p> using word_penalty 40</p>
+<p> info: reading word symbols</p>
+<p> out/target/product/generic/system/usr/srec/config/en.us/grammars/boolean.map</p>
+<p> info: reading parser symbols</p>
+<p> out/target/product/generic/system/usr/srec/config/en.us/grammars/boolean.omap</p>
+<p> info: reading model symbols external/srec/config/en.us/models/models128x.map</p>
+<p> found max_script_label 34</p>
+<p> E/dalvikvm( 4370): unable to mmap DEX cache: Invalid argument</p>
+<p> E/dalvikvm( 4370): Optimization failed</p>
+<p> info: Using parfile external/srec/config/en.us/baseline11k.par</p>
+<p> make: *** [out/target/product/generic/dex_bootjars/system/framework/core.odex] 错误 255</p>
+<p> info: Using dictionary dictionary/cmu6plus.ok.zip</p>
+<p> make: *** 正在删除文件“out/target/product/generic/dex_bootjars/system/framework/core.odex”</p>
+<p> make: *** 正在等待未完成的任务….</p>
+</li>
+</ul>
+<p>sudo apt-get install git gnupg flex bison gperf build-essential <br>  zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev <br>  libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 <br>  libgl1-mesa-dev g++-multilib mingw-w64 tofrodos</p>
+<p>sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so</p>
+<p>sudo apt-get install linux-libc-dev:i386</p>
+<p>sudo apt-get install libc6-dev-i386</p>
+<p>Install: out/host/linux-x86/framework/liblzf.jar</p>
+<h2 id="Running-sdk-eclipse-scripts-create-all-symlinks-sh"><a href="#Running-sdk-eclipse-scripts-create-all-symlinks-sh" class="headerlink" title="Running sdk/eclipse/scripts/create_all_symlinks.sh"></a>Running sdk/eclipse/scripts/create_all_symlinks.sh</h2><h3 id="Starting-tools-base-gradlew-publishLocal"><a href="#Starting-tools-base-gradlew-publishLocal" class="headerlink" title="Starting tools/base: gradlew publishLocal"></a>Starting tools/base: gradlew publishLocal</h3><p>sdk/eclipse/scripts/create_all_symlinks.sh: 第 285 行: cd: tools/base: 没有那个文件或目录</p>
+<p>make: *** [out/host/linux-x86/obj/EXECUTABLES/monitor_intermediates/monitor] 错误 1</p>
+<p>Unknown source ‘testutils’ to copy in ‘sdk/eclipse/plugins/com.android.ide.eclipse.tests</p>
+<p>Docs droiddoc: out/target/common/docs/ds</p>
+<p>/bin/bash: 行 18: 15174 已杀死&emsp;&emsp;&emsp;&emsp;javadoc</p>
+<p>[out/target/common/docs/doc-comment-check-timestamp] 错误 45</p>
+<p><a href="http://www.cnblogs.com/lake-of-embedded-system/p/3641958.html" target="_blank" rel="noopener">http://www.cnblogs.com/lake-of-embedded-system/p/3641958.html</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/23/linux-note/" rel="prev" title="linux-note">
+      <i class="fa fa-chevron-left"></i> linux-note
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/23/AndroidGithubProjects%E5%88%86%E7%B1%BB/" rel="next" title="AndroidGithubProjects分类">
+      AndroidGithubProjects分类 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#编译Android源码"><span class="nav-number">1.</span> <span class="nav-text">编译Android源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ubuntu16-0-4-build-android4-2-2"><span class="nav-number">2.</span> <span class="nav-text">ubuntu16.0.4 build android4.2.2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Running-sdk-eclipse-scripts-create-all-symlinks-sh"><span class="nav-number"></span> <span class="nav-text">Running sdk&#x2F;eclipse&#x2F;scripts&#x2F;create_all_symlinks.sh</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Starting-tools-base-gradlew-publishLocal"><span class="nav-number">1.</span> <span class="nav-text">Starting tools&#x2F;base: gradlew publishLocal</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="tgzzl"
+      src="/uploads/avatar.jpg">
+  <p class="site-author-name" itemprop="name">tgzzl</p>
+  <div class="site-description" itemprop="description">途径梦想 且作停留</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tgzzl</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

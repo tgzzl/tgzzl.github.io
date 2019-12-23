@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://tgzzl.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="jQuery选择器123456789101112131415:first:first-child:first-of-type:nth-child(n):nth-of-type(n):only-child:only-of-type:even:oddparent &gt; child &#x2F;&#x2F;$(&quot;div &gt; p&quot;)parent descendant &#x2F;&#x2F;$(&quot;div p&quot;)element + ne">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery">
+<meta property="og:url" content="https://tgzzl.github.io/2019/12/23/jquery/index.html">
+<meta property="og:site_name" content="谭广的技术专栏">
+<meta property="og:description" content="jQuery选择器123456789101112131415:first:first-child:first-of-type:nth-child(n):nth-of-type(n):only-child:only-of-type:even:oddparent &gt; child &#x2F;&#x2F;$(&quot;div &gt; p&quot;)parent descendant &#x2F;&#x2F;$(&quot;div p&quot;)element + ne">
+<meta property="og:image" content="http://www.runoob.com/images/img_jquerydim.gif">
+<meta property="article:published_time" content="2019-12-23T02:48:09.696Z">
+<meta property="article:modified_time" content="2019-12-23T02:48:09.862Z">
+<meta property="article:author" content="tgzzl">
+<meta property="article:tag" content="谭广 Hexo Github">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.runoob.com/images/img_jquerydim.gif">
+
+<link rel="canonical" href="https://tgzzl.github.io/2019/12/23/jquery/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>jquery | 谭广的技术专栏</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script async src="//hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">谭广的技术专栏</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">记录点滴</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://tgzzl.github.io/2019/12/23/jquery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="tgzzl">
+      <meta itemprop="description" content="途径梦想 且作停留">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谭广的技术专栏">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          jquery
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-12-23 10:48:09" itemprop="dateCreated datePublished" datetime="2019-12-23T10:48:09+08:00">2019-12-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">:first</span><br><span class="line">:first-child</span><br><span class="line">:first-<span class="keyword">of</span>-type</span><br><span class="line">:nth-child(n)</span><br><span class="line">:nth-<span class="keyword">of</span>-type(n)</span><br><span class="line">:only-child</span><br><span class="line">:only-<span class="keyword">of</span>-type</span><br><span class="line">:even</span><br><span class="line">:odd</span><br><span class="line">parent &gt; child <span class="comment">//$("div &gt; p")</span></span><br><span class="line">parent descendant <span class="comment">//$("div p")</span></span><br><span class="line">element + next <span class="comment">//$("div + p")</span></span><br><span class="line">element ~ siblings <span class="comment">//$("div ~ p")</span></span><br><span class="line">:eq(index)</span><br><span class="line">:button <span class="comment">//所有带有 type="button" 的 input 元素</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="效果方法-（可以用来实现-显示-隐藏-元素）"><a href="#效果方法-（可以用来实现-显示-隐藏-元素）" class="headerlink" title="效果方法 ==（可以用来实现 显示/隐藏 元素）=="></a>效果方法 ==（可以用来实现 显示/隐藏 元素）==</h3><ul>
+<li><p>hide([speed,callback]) 和 show([speed,callback])</p>
+<p>可选的 speed 参数规定隐藏/显示的速度，可以取以下值：”slow”、”fast” 或毫秒。</p>
+<p>可选的 callback 参数是隐藏或显示完成后所执行的函数名称。</p>
+</li>
+<li><p>slideDown([speed,easing,callback])、slideUp([speed,easing,callback])</p>
+</li>
+<li><p>fadeIn([speed,easing,callback])、fadeOut([speed,easing,callback])</p>
+</li>
+</ul>
+<h3 id="设置内容和属性"><a href="#设置内容和属性" class="headerlink" title="设置内容和属性"></a>设置内容和属性</h3><ul>
+<li><p>设置内容 - text()、html() 以及 val()</p>
+<p>text()、html() 以及 val()，同样拥有回调函数。回调函数有两个参数：被选元素列表中当前元素的下标，以及原始（旧的）值。然后以函数新值返回您希望使用的字符串。</p>
+</li>
+<li><p>设置属性 - attr()</p>
+<p>attr()，也提供回调函数。回调函数有两个参数：被选元素列表中当前元素的下标，以及原始（旧的）值。然后以函数新值返回您希望使用的字符串。</p>
+<p>attr() 方法也允许您同时设置多个属性。</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#btn1"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"#test1"</span>).text(<span class="function"><span class="keyword">function</span>(<span class="params">i,origText</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"旧文本: "</span> + origText + <span class="string">" 新文本: Hello world! (index: "</span> + i + <span class="string">")"</span>; </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">"#runoob"</span>).attr(<span class="string">"href"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">i,origValue</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> origValue + <span class="string">"/jquery"</span>; </span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"#runoob"</span>).attr(&#123;</span><br><span class="line">        <span class="string">"href"</span> : <span class="string">"http://www.runoob.com/jquery"</span>,</span><br><span class="line">        <span class="string">"title"</span> : <span class="string">"jQuery 教程"</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><ul>
+<li>append() prepend() 是在选择元素内部嵌入。</li>
+<li>after() before() 是在元素外面追加。</li>
+<li>appendTo() prependTo()</li>
+<li>insertAfter() insertBefore()<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;&lt;span&gt;Hello World!&lt;&#x2F;span&gt;&quot;).appendTo(&quot;p&quot;);&#x2F;&#x2F;p元素内容后插入span &#x3D;&gt; &lt;p&gt;原来的内容&lt;span&gt;Hello World!&lt;&#x2F;span&gt;&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">$(content).appendTo(selector)</span><br><span class="line">1. content	必需。规定要插入的内容（必须包含 HTML 标签）。</span><br><span class="line">注意：如果 content 是已存在的元素，它将从当前位置被移除，并在被选元素的结尾被插入。</span><br><span class="line">2. selector	必需。规定把内容追加到哪个元素上。</span><br><span class="line"></span><br><span class="line">$(content).insertBefore(selector)</span><br><span class="line">1. content	必需。规定要插入的内容（必须包含 HTML 标签）。</span><br><span class="line">注意：如果 content 是已存在的元素，它将从它的当前位置被移除，并被插入在被选元素之前。</span><br><span class="line">2. selector	必需。规定在何处插入内容。</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h3><ul>
+<li><p>remove() 方法删除被选元素及其子元素。</p>
+<p>remove() 方法也可接受一个参数，允许对被删元素进行过滤，该参数可以是任何 jQuery 选择器的语法。</p>
+<p>$(“p”).remove(“.italic”);//删除 class=”italic” 的所有 p 元素</p>
+</li>
+<li><p>empty() 方法删除被选元素的子元素。</p>
+</li>
+</ul>
+<h3 id="尺寸方法"><a href="#尺寸方法" class="headerlink" title="尺寸方法"></a>尺寸方法</h3><ul>
+<li>width() height() </li>
+</ul>
+<p>返回元素的宽度、高度（不包括内边距、边框或外边距）</p>
+<ul>
+<li>innerWidth() innerHeight()</li>
+</ul>
+<p>返回元素的宽度、高度（包括内边距、不包括边框或外边距）</p>
+<ul>
+<li>outerWidth() outerHeight()</li>
+</ul>
+<p>返回元素的宽度、高度（包括内边距和边框）</p>
+<p>outerWidth(ture) 返回元素的宽度、高度（包括内边距和边框和外边距）</p>
+<p><img src="http://www.runoob.com/images/img_jquerydim.gif" alt="image"></p>
+<h3 id="遍历-祖先"><a href="#遍历-祖先" class="headerlink" title="遍历 - 祖先"></a>遍历 - 祖先</h3><ul>
+<li><p>parent() 返回被选元素的直接父元素。</p>
+</li>
+<li><p>parents() 返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (<html>)。</p>
+</li>
+<li><p>parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素。</p>
+<p>$(“span”).parentsUntil(“div”);//返回介于 span 与 div 元素之间的所有祖先元素</p>
+</li>
+</ul>
+<h3 id="遍历-同胞-siblings"><a href="#遍历-同胞-siblings" class="headerlink" title="遍历 - 同胞(siblings)"></a>遍历 - 同胞(siblings)</h3><ul>
+<li>siblings() 返回被选元素的所有同胞元素。</li>
+<li>next() 返回被选元素的下一个同胞元素。</li>
+<li>nextAll()</li>
+<li>nextUntil()</li>
+<li>prev()</li>
+<li>prevAll()</li>
+<li>prevUntil()</li>
+</ul>
+<h3 id="遍历-过滤"><a href="#遍历-过滤" class="headerlink" title="遍历- 过滤"></a>遍历- 过滤</h3><ul>
+<li>first()</li>
+<li>last()</li>
+<li>eq() ,索引号从 0 开始</li>
+<li>filter()</li>
+<li>not() ,与 filter() 相反</li>
+</ul>
+<h3 id="Jsonp-JSON-with-Padding"><a href="#Jsonp-JSON-with-Padding" class="headerlink" title="Jsonp(JSON with Padding)"></a>Jsonp(JSON with Padding)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">callbackFunction</span>(<span class="params">result, methodName</span>)</span>&#123;&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">" src="</span>http:<span class="comment">//www.runoob.com/try/ajax/jsonp.php?jsoncallback=callbackFunction"&gt;&lt;/script&gt;</span></span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/jQuery 使用 JSONP</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    $.getJSON("http:/</span><span class="regexp">/www.runoob.com/</span><span class="keyword">try</span>/ajax/jsonp.php?jsoncallback=?<span class="string">", function(data) &#123;&#125;);</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>onreadystatechange</td>
+<td>存储函数（或函数名），每当 readyState 属性改变时，就会调用该函数。</td>
+</tr>
+<tr>
+<td>readyState</td>
+<td>存有 XMLHttpRequest 的状态。</td>
+</tr>
+<tr>
+<td>status</td>
+<td>200: “OK” 404: 未找到页面</td>
+</tr>
+<tr>
+<td>readyState 从 0 到 4 发生变化。</td>
+<td></td>
+</tr>
+<tr>
+<td>- 0: 请求未初始化</td>
+<td></td>
+</tr>
+<tr>
+<td>- 1: 服务器连接已建立</td>
+<td></td>
+</tr>
+<tr>
+<td>- 2: 请求已接收</td>
+<td></td>
+</tr>
+<tr>
+<td>- 3: 请求处理中</td>
+<td></td>
+</tr>
+<tr>
+<td>- 4: 请求已完成，且响应已就绪)</td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ajax</span></span><br><span class="line"><span class="keyword">var</span> xmlhttp = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xmlhttp.open(<span class="string">"POST"</span>,<span class="string">"/try/ajax/demo_post2.php"</span>,<span class="literal">true</span>);</span><br><span class="line">xmlhttp.setRequestHeader(<span class="string">"Content-type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">xmlhttp.send(<span class="string">"fname=Henry&amp;lname=Ford"</span>);</span><br><span class="line">xmlhttp.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (xmlhttp.readyState==<span class="number">4</span> &amp;&amp; xmlhttp.status==<span class="number">200</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(xmlhttp.responseText, xmlhttp.responseXML)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">//jQuery处理多个异步事件</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">	<span class="keyword">var</span> d1 = $.Deferred();</span><br><span class="line">	<span class="keyword">var</span> d2 = $.Deferred();</span><br><span class="line">	<span class="keyword">var</span> d3 = $.Deferred();</span><br><span class="line">	$.when( d1, d2, d3 ).done(<span class="function"><span class="keyword">function</span> (<span class="params"> v1, v2, v3 </span>) </span>&#123;</span><br><span class="line">		alert( v1 ); <span class="comment">// v1 is undefined</span></span><br><span class="line">		alert( v2 ); <span class="comment">// v2 is "abc"</span></span><br><span class="line">		alert( v3 ); <span class="comment">// v3 is an array [ 1, 2, 3, 4, 5 ]</span></span><br><span class="line">	&#125;);</span><br><span class="line">	d1.resolve();</span><br><span class="line">	d2.resolve( <span class="string">"abc"</span> );</span><br><span class="line">	d3.resolve( <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> );</span><br><span class="line">&#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/23/es5/" rel="prev" title="es5">
+      <i class="fa fa-chevron-left"></i> es5
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/23/css/" rel="next" title="css">
+      css <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery"><span class="nav-number">1.</span> <span class="nav-text">jQuery</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器"><span class="nav-number">1.0.1.</span> <span class="nav-text">选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果方法-（可以用来实现-显示-隐藏-元素）"><span class="nav-number">1.0.2.</span> <span class="nav-text">效果方法 &#x3D;&#x3D;（可以用来实现 显示&#x2F;隐藏 元素）&#x3D;&#x3D;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置内容和属性"><span class="nav-number">1.0.3.</span> <span class="nav-text">设置内容和属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加元素"><span class="nav-number">1.0.4.</span> <span class="nav-text">添加元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除元素"><span class="nav-number">1.0.5.</span> <span class="nav-text">删除元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尺寸方法"><span class="nav-number">1.0.6.</span> <span class="nav-text">尺寸方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历-祖先"><span class="nav-number">1.0.7.</span> <span class="nav-text">遍历 - 祖先</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历-同胞-siblings"><span class="nav-number">1.0.8.</span> <span class="nav-text">遍历 - 同胞(siblings)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历-过滤"><span class="nav-number">1.0.9.</span> <span class="nav-text">遍历- 过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jsonp-JSON-with-Padding"><span class="nav-number">1.0.10.</span> <span class="nav-text">Jsonp(JSON with Padding)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.0.11.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="tgzzl"
+      src="/uploads/avatar.jpg">
+  <p class="site-author-name" itemprop="name">tgzzl</p>
+  <div class="site-description" itemprop="description">途径梦想 且作停留</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tgzzl</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

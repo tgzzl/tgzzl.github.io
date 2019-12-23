@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://tgzzl.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="WEB安全颜色是指在256色计算机系统上总能避免抖动的颜色。 可以表示为RGB值为20%和51（十六进制值为33）的倍数，0%和0也是安全值。例如：rgb(40%，100%，0%)、rgb(0, 204, 102)。 采用十六进制表示时，00, 33, 66, 99, CC, FF 都是安全的。 选择器优先级important &gt; 内联 &gt; ID &gt; 类 &gt; 标签 &gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css">
+<meta property="og:url" content="https://tgzzl.github.io/2019/12/23/css/index.html">
+<meta property="og:site_name" content="谭广的技术专栏">
+<meta property="og:description" content="WEB安全颜色是指在256色计算机系统上总能避免抖动的颜色。 可以表示为RGB值为20%和51（十六进制值为33）的倍数，0%和0也是安全值。例如：rgb(40%，100%，0%)、rgb(0, 204, 102)。 采用十六进制表示时，00, 33, 66, 99, CC, FF 都是安全的。 选择器优先级important &gt; 内联 &gt; ID &gt; 类 &gt; 标签 &gt;">
+<meta property="article:published_time" content="2019-12-23T02:48:19.687Z">
+<meta property="article:modified_time" content="2019-12-23T02:48:19.856Z">
+<meta property="article:author" content="tgzzl">
+<meta property="article:tag" content="谭广 Hexo Github">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://tgzzl.github.io/2019/12/23/css/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>css | 谭广的技术专栏</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script async src="//hm.baidu.com/hm.js?41fc030db57d5570dd22f78997dc4a7e"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">谭广的技术专栏</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">记录点滴</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://tgzzl.github.io/2019/12/23/css/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+      <meta itemprop="name" content="tgzzl">
+      <meta itemprop="description" content="途径梦想 且作停留">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谭广的技术专栏">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          css
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-12-23 10:48:19" itemprop="dateCreated datePublished" datetime="2019-12-23T10:48:19+08:00">2019-12-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="WEB安全颜色"><a href="#WEB安全颜色" class="headerlink" title="WEB安全颜色"></a>WEB安全颜色</h3><p>是指在256色计算机系统上总能避免抖动的颜色。</p>
+<p>可以表示为RGB值为20%和51（十六进制值为33）的倍数，0%和0也是安全值。例如：rgb(40%，100%，0%)、rgb(0, 204, 102)。</p>
+<p>采用十六进制表示时，00, 33, 66, 99, CC, FF 都是安全的。</p>
+<h3 id="选择器优先级"><a href="#选择器优先级" class="headerlink" title="选择器优先级"></a>选择器优先级</h3><p>important &gt; 内联 &gt; ID &gt; 类 &gt; 标签 &gt; 相邻选择器 &gt; 子选择器 &gt; 后代选择器&gt; 通配符选择器 &gt; 属性选择器 &gt; 伪对象</p>
+<h3 id="长度单位"><a href="#长度单位" class="headerlink" title="长度单位"></a>长度单位</h3><p>绝对长度单位</p>
+<ul>
+<li>英寸in</li>
+<li>厘米cm</li>
+<li>毫米mm</li>
+<li>点pt</li>
+<li>派卡pc</li>
+<li>px</li>
+</ul>
+<p>相对长度单位</p>
+<ul>
+<li><p>em</p>
+<p>1em定义为一种给定字体的 font-size 的值。如果一个元素的 font-size 的值为14px，那么相对该元素，1em就等于14px。<br>在设置字体大小时，em的值会相对于父元素的字体大小改变。</p>
+</li>
+<li><p>ex</p>
+<p>是指所用字体中小写 x 的高度。实际中大多数用户代理的做法是：取 em 的值的一半作为 ex 的值。</p>
+</li>
+<li><p>rem</p>
+<p>根元素（html）的 font-size</p>
+</li>
+</ul>
+<p>css2单位：角度值、时间值、频率值</p>
+<h3 id="用em来设置字体大小"><a href="#用em来设置字体大小" class="headerlink" title="用em来设置字体大小"></a>用em来设置字体大小</h3><p>为了避免Internet Explorer 中无法调整文本的问题，许多开发者使用 em 单位代替像素。</p>
+<p>em的尺寸单位由W3C建议。</p>
+<p>1em和当前字体大小相等。在浏览器中默认的文字大小是16px。</p>
+<p>因此，1em的默认大小是16px。可以通过下面这个公式将像素转换为em：px/16=em</p>
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><ul>
+<li>a:link - 正常，未访问过的链接</li>
+<li>a:visited - 用户已访问过的链接</li>
+<li>a:hover - 当用户鼠标放在链接上时</li>
+<li>a:active - 链接被点击的那一刻</li>
+</ul>
+<p>a:hover 必须跟在 a:link 和 a:visited后面</p>
+<p>a:active 必须跟在 a:hover后面</p>
+<h3 id="float-浮动"><a href="#float-浮动" class="headerlink" title="float(浮动)"></a>float(浮动)</h3><ul>
+<li>行内框与浮动元素重叠时，其边框、背景、内容都在该浮动元素“之上”显示</li>
+<li>块框与浮动元素重叠时，其边框、背景在该浮动元素“之下”显示，内容在该浮动元素“之上”显示</li>
+</ul>
+<h4 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h4><ul>
+<li>clear属性，应用于块级元素</li>
+<li>父级div定义 overflow: auto</li>
+<li>:after</li>
+</ul>
+<h3 id="positioning-定位"><a href="#positioning-定位" class="headerlink" title="positioning(定位)"></a>positioning(定位)</h3><ul>
+<li>static</li>
+</ul>
+<p>默认值，即没有定位，元素出现在正常的流中。</p>
+<ul>
+<li>relative</li>
+</ul>
+<p>相对定位元素的定位是相对其正常位置。</p>
+<ul>
+<li>fixed</li>
+</ul>
+<p>元素的位置相对于浏览器窗口是固定位置。</p>
+<p>Fixed定位使元素的位置与文档流无关，因此不占据空间。</p>
+<p>Fixed定位的元素和其他元素重叠。</p>
+<ul>
+<li>absolute</li>
+</ul>
+<p>绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于</p>
+<p>absolute 定位使元素的位置与文档流无关，因此不占据空间。</p>
+<p>absolute 定位的元素和其他元素重叠。</p>
+<h3 id="布局-水平居中-amp-垂直居中"><a href="#布局-水平居中-amp-垂直居中" class="headerlink" title="布局 - 水平居中 &amp; 垂直居中"></a>布局 - 水平居中 &amp; 垂直居中</h3><blockquote>
+<p>在块级非替换元素在普通流内布局前提下，宽是包含块，是可以确定的。而高即使给了确定值，规范(css2)没给出既定布局算法让它能水平居中。</p>
+</blockquote>
+<blockquote>
+<p>绝对定位导致与文档流无关时，无论垂直还是水平方向，margin有节余同时对应方向设置了auto,相应方向计算出的margin是分半的。</p>
+</blockquote>
+<p>水平居中：对齐一个块级元素(如 div), 可以使用 margin: auto;</p>
+<p>垂直居中：</p>
+<ul>
+<li><p>absolute 定位来实现的几种方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> Absolute Centering</span><br><span class="line">&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: <span class="number">0</span>; left: <span class="number">0</span>; bottom: <span class="number">0</span>; right: <span class="number">0</span>;</span><br><span class="line">    margin: auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> Negative Margins</span><br><span class="line">&#123;</span><br><span class="line">    width: <span class="number">300</span>px;</span><br><span class="line">    heigth: <span class="number">200</span>px;</span><br><span class="line">    padding: <span class="number">20</span>px;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: <span class="number">50</span>%; left: <span class="number">50</span>%;</span><br><span class="line">    margin-top: <span class="number">-120</span>px;<span class="comment">/* (height + padding)/2 */</span></span><br><span class="line">    margin-left: <span class="number">-170</span>px;<span class="comment">/* (width + padding)/2 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> Transforms</span><br><span class="line">&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: <span class="number">50</span>%; left: <span class="number">50</span>%;</span><br><span class="line">    margin: auto;</span><br><span class="line">    transform: translate(<span class="number">-50</span>%,<span class="number">-50</span>%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>Flexbox</p>
+<p>{display: flex; justify-content: center; align-items: center;}</p>
+</li>
+<li><p>Table-Cell</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;Center-Container is-Table&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;Table-Cell&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;Center-Block&quot;&gt;</span><br><span class="line">    &lt;!-- CONTENT --&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">.Center-Container.is-Table &#123; display: table; &#125;</span><br><span class="line">.is-Table .Table-Cell &#123;</span><br><span class="line">  display: table-cell;</span><br><span class="line">  vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">.is-Table .Center-Block &#123;</span><br><span class="line">  width: 50%;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Inline-Block</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;Center-Container is-Inline&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;Center-Block&quot;&gt;</span><br><span class="line">    &lt;!-- CONTENT --&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">.Center-Container.is-Inline &#123; </span><br><span class="line">  text-align: center;</span><br><span class="line">  overflow: auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.Center-Container.is-Inline:after,</span><br><span class="line">.is-Inline .Center-Block &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.Center-Container.is-Inline:after &#123;</span><br><span class="line">  content: &#39;&#39;;</span><br><span class="line">  height: 100%;</span><br><span class="line">  margin-left: -0.25em; &#x2F;* To offset spacing. May vary by font *&#x2F;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.is-Inline .Center-Block &#123;</span><br><span class="line">  max-width: 99%; &#x2F;* Prevents issues with long content causes the content block to be pushed to the top *&#x2F;</span><br><span class="line">  &#x2F;* max-width: calc(100% - 0.25em) &#x2F;* Only for IE9+ *&#x2F; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p><a href="https://codepen.io/shshaw/full/gEiDt" target="_blank" rel="noopener">水平垂直居中的几种方法的比较</a></p>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Browser Support</th>
+<th>Responsive</th>
+<th>Overflow</th>
+<th>resize:both</th>
+<th>Variable Height</th>
+<th>Major Caveats</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Absolute Centering</td>
+<td>Modern &amp; IE8+</td>
+<td>Yes</td>
+<td>Scroll, can overflow container</td>
+<td>Yes</td>
+<td>Yes*</td>
+<td>Variable Height not perfect cross-browser</td>
+</tr>
+<tr>
+<td>Negative Margins</td>
+<td>All</td>
+<td>No</td>
+<td>Scroll</td>
+<td>Resizes but doesn’t stay centered</td>
+<td>No</td>
+<td>Not responsive, margins must be calculated manually</td>
+</tr>
+<tr>
+<td>Transforms</td>
+<td>Modern &amp; IE9+</td>
+<td>Yes</td>
+<td>Scroll, can overflow container</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Blurry rendering</td>
+</tr>
+<tr>
+<td>Table-Cell</td>
+<td>Modern &amp; IE8+</td>
+<td>Yes</td>
+<td>Expands container</td>
+<td>No</td>
+<td>Yes</td>
+<td>Extra markup</td>
+</tr>
+<tr>
+<td>Inline-Block</td>
+<td>Modern, IE8+ &amp; IE7*</td>
+<td>Yes</td>
+<td>Expands container</td>
+<td>No</td>
+<td>Yes</td>
+<td>Requires container, hacky styles</td>
+</tr>
+<tr>
+<td>Flexbox</td>
+<td>Modern &amp; IE10+</td>
+<td>Yes</td>
+<td>Scroll, can overflow container</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Requires container, vendor prefixes</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/23/jquery/" rel="prev" title="jquery">
+      <i class="fa fa-chevron-left"></i> jquery
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/12/23/vue%E7%AC%94%E8%AE%B0/" rel="next" title="vue笔记">
+      vue笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#WEB安全颜色"><span class="nav-number">1.</span> <span class="nav-text">WEB安全颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器优先级"><span class="nav-number">2.</span> <span class="nav-text">选择器优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#长度单位"><span class="nav-number">3.</span> <span class="nav-text">长度单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用em来设置字体大小"><span class="nav-number">4.</span> <span class="nav-text">用em来设置字体大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接"><span class="nav-number">5.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#float-浮动"><span class="nav-number">6.</span> <span class="nav-text">float(浮动)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#清除浮动"><span class="nav-number">6.1.</span> <span class="nav-text">清除浮动</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#positioning-定位"><span class="nav-number">7.</span> <span class="nav-text">positioning(定位)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布局-水平居中-amp-垂直居中"><span class="nav-number">8.</span> <span class="nav-text">布局 - 水平居中 &amp; 垂直居中</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="tgzzl"
+      src="/uploads/avatar.jpg">
+  <p class="site-author-name" itemprop="name">tgzzl</p>
+  <div class="site-description" itemprop="description">途径梦想 且作停留</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tgzzl</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
